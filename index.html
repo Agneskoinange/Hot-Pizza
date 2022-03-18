@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery link -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <!-- javascript link -->
     <script src="./js/script.js"></script>
     <!-- font link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -22,21 +24,21 @@
                 <p> Welcome to Hot pizza Palace </p>
                 <ul class="nav-items">
                     <li><a href="#aboutus">About Us</a></li>
-                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#products"> Our Products</a></li>
                     <li><a href="#orders">Order</a></li>
                     <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </nav>
 
+            <div class="small-image text-center">
+                <!-- logo <img src="./Images/pizza-4369001_960_720.webp" alt=""> -->
+            </div>
 
             <div class="row">
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-6">
                     <h1>HOT <br> PIZZA <span class="color-palace">PALACE!</span></h1>
                     <p>Serving hot Pizzas! Delivered while hot!</p>
-                    <a href="#order-section" class="btn mt-3">Place your Order</a>
-                    <div class="small-image text-center">
-                        <!-- logo <img src="./Images/pizza-4369001_960_720.webp" alt=""> -->
-                    </div>
+                    <a href="#order" class="btn1">Place your Order</a>
                 </div>
             </div>   
         </div>
@@ -48,12 +50,18 @@
     
 <div class="container">
     <div class="About-Us">
-        <img src="./Images/img9.jpg" alt="">
-        <p>Hot PIzza Palace is a pizza point located in Nairobi along THika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satify most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your linkings.All we are saying is that How you like it is how you will get it. SImply it is all about you</p>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>About us</h1>
+
+                <img src="./Images/img9.jpg" alt=" hot pizza" id="hotpizza">
+                <p>Hot PIzza Palace is a pizza point located in Nairobi along THika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satify most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your linkings.All we are saying is that How you like it is how you will get it. SImply it is all about you</p>
+            </div>
+        </div>
 
     </div>
 </div>
-<!-- menu -->
+<!-- Our products -->
 
 <!-- ordering section -->
 <div class="container" class="order">
@@ -132,7 +140,7 @@
 
                   <div class="mt-3 text-end">
                     <p class="grand-total">Total cost: Ksh <span class="text-bold">0</span></p>
-                </div>
+                 </div>
                 <div class="delivery-button float-end m-3">
                     <button class="btn" data-bs-toggle="modal" data-bs-target="#deliveryMethodModal">Next Step <i
                             class="fa fa-arrow-right"></i></button>
