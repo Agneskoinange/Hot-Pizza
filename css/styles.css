@@ -39,3 +39,22 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+
+
+
+#resposive-table {
+    width:50%
+    height:100px
+    border: 1px solid black;  
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-align:left
+  }
+
+thead {color: green;}
+tbody {color: blue;}
+tfoot {color: red;}

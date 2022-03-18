@@ -15,6 +15,7 @@
     <title>Hot-Pizza</title>
 </head>
 <body>
+    <!-- home section -->
     <div class="container-fluid">
         <div id="home">
             <nav class="navbar navbar-expand-lg navbar-dark">
@@ -52,7 +53,102 @@
 
     </div>
 </div>
+<!-- menu -->
 
+<!-- ordering section -->
+<div class="container" class="order">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Order Here</h2>
+            <p>Best palace with hot pizza</p>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="">Select Pizza Size <span class="text-danger">*</span></label>
+                    <select name="size" id="size" class="form-control">
+                        <option value="" selected disabled>Size</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Select Pizza Crust <span class="text-danger">*</span></label>
+                    <select name="crust" id="crust" class="form-control">
+                        <option value="" selected disabled>Select Crust</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Select Pizza Toppings <span class="text-danger">*</span></label>
+                    <select name="crust" id="crust" class="form-control">
+                        <option value="" selected disabled>Topings</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button class="btn">Add <i class="btn-btn-primary"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6" id="resposive-table">
+            <table class="table table-responsive order-table">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Pizza</th>
+                        <th>cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Size</td>
+                        <td>cost</td>
+                      </tr>
+        
+                      <tr>
+                        <td>Crust</td>
+                        <td>cost</td>
+                      </tr>
+                      <tr>
+                        <td>Toppings</td>
+                        <td>cost</td>
+                      </tr>
+                      <tr>
+                        <td>Quantity</td>
+                        <td>cost</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>Total cost</td>
+                        <td>cost</td>
+        
+                      </tr>
+
+                      <tr>
+                        <td colspan="6" class="empty-cart text-center">
+                            <img src="img/empty-cart.png" alt="Empty cart image"> <br>
+                            Your cart is empty!
+                        </td>
+                    </tr>
+                    </tfoot>
+                  </table>
+
+                  <div class="mt-3 text-end">
+                    <p class="grand-total">Total cost: Ksh <span class="text-bold">0</span></p>
+                </div>
+                <div class="delivery-button float-end m-3">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#deliveryMethodModal">Next Step <i
+                            class="fa fa-arrow-right"></i></button>
+                </div>
+            </div>
+                
+            
+
+
+
+       
+       
+    </div>
+
+
+</div>
 
 </body>
 </html>
