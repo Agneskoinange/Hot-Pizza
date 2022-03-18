@@ -12,7 +12,7 @@
     padding: 10px;
     margin-left: 10px;
     text-emphasis-color: #ffffff;
-    background-attachment: fixed;
+    background-attachment:local;
     background-size:cover; 
   }
   #home {
@@ -22,6 +22,7 @@
     color: blue;;
     padding-bottom: 400px;
     padding-top: 0px;
+    text-align: justify;
   }
     
     li {
