@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!-- jquery link -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <!-- javascript link -->
@@ -69,7 +71,7 @@
     </div>
 </div>
 <!-- Our products -->
-<div class="container-fluid" class="Products" id="products">
+<div class="container" class="Products" id="products">
     <div class="row">
         <div class="col-md-12">
             <h2>Our Products</h2>
@@ -78,15 +80,18 @@
 
     <div class="row">
         <div class="col-md-4">
-            <p>small</p>
+            <img src="./Images/pexels-gilly-topicha-10779657.jpg" alt=" hot pizza" id="hotpizza">
+            <p>Butternut toppings</p>
         </div>
 
         <div class="col-md-4">
-            <p>medium</p>
+            <img src="./Images/vitalii-chernopyskyi-Oxb84ENcFfU-unsplash.jpg" alt=" hot pizza" id="hotpizza">
+            <p>Bacon Toppings</p>
         </div>
 
         <div class="col-md-4">
-            <p>large</p>
+            <img src="./Images/pexels-valeria-boltneva-9957549.jpg" alt=" hot pizza" id="hotpizza">
+            <p>Roasted Tomato toppings</p>
         </div>
 
     </div>
@@ -237,20 +242,97 @@
         </div>    
     </div>
 
-                <!-- Delivery -->
-                        <div class="delivery">
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                </div>
-                            </div>
+    <!-- Delivery -->
+    <div class="modal fade" id="deliveryMethodModal" tabindex="-1" aria-labelledby="deliveryMethodModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deliveryMethodModalLabel">DELIVERY METHOD</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="select-delivery-method">
+                        <p>Choose your delivery method! <span class="text-center">*</span></p>
+                        <p class="delivery-option text-danger"></p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryMethod1"
+                                value="pickup">
+                            <label class="form-check-label" for="deliveryMethod1">
+                                Pickup
+                            </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryMethod2"
+                                value="delivery">
+                            <label class="form-check-label" for="deliveryMethod2">
+                                Deliverered to your location
+                            </label>
+                            <p>Please ensure you have entered location address. for <span class="color-palace">KSh 128</span></p>
+                        </div>
+                        <div class="location mt-5">
+                            <form id="delivery-form">
+                                <div id="location-input-details">
+                                    <h5>Delivery Details</h5>
+                                    <p class="text-danger error-delivery-location"></p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Name <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="name" id="customerName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Phone Number <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="number" class="form-control" name="phone"
+                                                    id="customerPhone">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Location <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="location"
+                                                    id="customerLocation">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Additional
+                                                    Information
+                                                </label>
+                                                <textarea name="additionalInfo" class="form-control" id="additionalInfo"
+                                                    rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn" id="checkout-button">Checkout</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- div to display the summary of all the orders -->
+                    <div id="summary-order">
+                        <div class="delivery-head"></div>
+                        <div class="delivery-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
 
 
 </div>
 
 
-<div class=container id="contactus" style= padding-top:300px>
+<div class=container-fluid id="contactus" style= padding-top:300px>
     <h3><strong style= padding-top:20px>Contact us</strong></h3>
     <div class="row">
         <div class="col-md-4">
@@ -277,6 +359,7 @@
             </form>
         </div>
     </div>
-<script src="js/scripts.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
+<button onClick="JavaScript:exampleFunction()">Click Me</button>
 </html>

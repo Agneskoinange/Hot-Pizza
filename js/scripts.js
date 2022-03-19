@@ -244,8 +244,7 @@ function calculateFinalTotal() {
         total += pizza.price;
     });
 
-    $(".final-total").html(`Ksh <span class="text-bold">${total}</span> `);
-
+    $(".final-total").html(`Ksh <span class="text-bold">${total}</span> `)
 }
 
 
