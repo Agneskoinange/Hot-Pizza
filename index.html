@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery link -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
+    <!-- javascript link -->
+    <!-- <script src="./js/script.js"></script> -->
     <!-- font link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Boostrap cdn link -->
@@ -15,27 +17,35 @@
     <title>Hot-Pizza</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div id="home">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <p> Welcome to Hot pizza Palace </p>
-                <ul class="nav-items">
-                    <li><a href="#aboutus">About Us</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#orders">Order</a></li>
-                    <li><a href="#contactus">Contact Us</a></li>
-                </ul>
-            </nav>
+    <!-- home section -->
 
-
+            <div class="container row">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <ul class="nav-items">
+                        <li><a href="#Home">About us</a></li>
+                        <li><a href="#aboutus">About us</a></li>
+                        <li><a href="#products"> Our Products</a></li>
+                        <li><a href="#orders">Order</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+<div class="container-fluid">
+<div id="home">
+            <p> Welcome to Hot pizza Palace </p>
             <div class="row">
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-4">
                     <h1>HOT <br> PIZZA <span class="color-palace">PALACE!</span></h1>
                     <p>Serving hot Pizzas! Delivered while hot!</p>
-                    <a href="#order-section" class="btn mt-3">Place your Order</a>
-                    <div class="small-image text-center">
-                        <!-- logo <img src="./Images/pizza-4369001_960_720.webp" alt=""> -->
-                    </div>
+                    <button>
+                    <a href="#order" class="btn1">Order Now!</a>
+                    </button>
+                </div>
+                <div class="col-md-4 img2">
+                    <img src="./Images/istockphoto-946000252-170667a-removebg-preview.png" alt="" height="120%" width="400">
+                </div>
+                <div class = "col-md-4 img1">
+                        <img src="./Images/pexels-andy-kuzma-2918521-removebg-preview.png" alt="" height="200%" width="700">
                 </div>
             </div>   
         </div>
@@ -47,12 +57,140 @@
     
 <div class="container">
     <div class="About-Us">
-        <img src="./Images/img9.jpg" alt="">
-        <p>Hot PIzza Palace is a pizza point located in Nairobi along THika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satify most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your linkings.All we are saying is that How you like it is how you will get it. SImply it is all about you</p>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>About us</h1>
+
+                <img src="./Images/img9.jpg" alt=" hot pizza" id="hotpizza">
+                <p>Hot Pizza Palace is a pizza point located in Nairobi along THika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satisfy most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your liking.All we are saying is that "how you like it is how you will get it". Simply! It is all about you</p>
+            </div>
+        </div>
 
     </div>
 </div>
+<!-- Our products -->
+<div class="container-fluid" class="Products">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Our Products</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>small</p>
+        </div>
+
+        <div class="col-md-4">
+            <p>medium</p>
+        </div>
+
+        <div class="col-md-4">
+            <p>large</p>
+        </div>
+
+    </div>
+
+        
+</div>
+
+<!-- ordering section -->
+<div class="container" class="order".value>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Order Here</h2>
+            <p>Best palace with hot pizza</p>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>
+                    <select name="size" id="size" class="form-control">
+                        <option value="" selected disabled>Size</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new-crust">Select Pizza Crust <span class="text-danger">*</span></label>
+                    <select name="crust" id="crust" class="form-control">
+                        <option value="" selected disabled>Select Crust</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new-toppings">Select Pizza Toppings <span class="text-danger">*</span></label>
+                    <select name="toppings" id="toppings" class="form-control">
+                        <option value="" selected disabled>Toppings</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button class="btn">Add <i class="btn-btn-primary"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6" id="resposive-table">
+            <table class="table table-responsive order-table">
+                <thead>
+                    <tr>
+                      <th>Pizza</th>
+                      <th>cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>Size</td>
+                      <td>cost</td>
+                    </tr>
+      
+                    <tr>
+                      <td>Crust</td>
+                      <td>cost</td>
+                    </tr>
+                    <tr>
+                      <td>Toppings</td>
+                      <td>cost</td>
+                    </tr>
+                    <tr>
+                      <td>Quantity</td>
+                      <td>cost</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                      <td>Total cost</td>
+                      <td>cost</td>
+      
+                    </tr>
+
+                    <tr>
+                      <td colspan="6" class="empty-box text-center">
+                          <img src="./Images/Pizzabox.jpeg" alt="Empty pizza box"> <br>
+                          <p>Your shopping box is empty!</p>
+                      </td>
+                    </tr>
+                </tfoot>
+            </table>
+                   <!-- order summary -->
+                  <div class="text-end">
+                        <p class="Final-total">Total cost: Ksh <span class="text-bold"></span></p>
+                    </div>
+                    <div class="delivery-button float-end">
+                        <button class="btn" data-bs-toggle="summary" data-bs-target="#deliveryMethod">Delivery Check <i
+                                class="fa fa-arrow-right"></i></button>
+                  </div>
+                
+            
+        </div>    
+    </div>
+
+                <!-- Delivery -->
+                        <div class="delivery">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+                        </div>
 
 
+</div>
+<script src="js/scripts.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 #home {
 
-    background-image: url("../Images/Img2.jpg");
+     background-color: rgb(248, 241, 241);
     background-size:cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -12,20 +12,26 @@
     padding: 10px;
     margin-left: 10px;
     text-emphasis-color: #ffffff;
-    background-attachment: fixed;
-    background-size:cover; 
+    background-attachment:local;
+    background-size:cover;  
   }
+
   #home {
     text-align: center;
     text-emphasis: none;
-    text-decoration:blue;
-    color: blue;;
-    padding-bottom: 400px;
+    text-decoration: rgb(212, 155, 23) ;
+    color:rgb(212, 155, 23) ;;
+    padding-bottom: 150px;
     padding-top: 0px;
+    text-align: justify;
+  }
     
- 
+    li {
+        border-bottom: 1px solid #555;
+        display: inline;
+     }
     p {
-        font: border-inline: ;
+        font: border-inline;
 
     }
 
@@ -34,8 +40,51 @@
     margin: 0;
     font-size: 18px;
 }
-#header .navbar{
+.navbar{
    /* remove padding*/
     padding-top: 0;
     padding-bottom: 0;
+    text-align: center;
+    float: inline-center;
 }
+#home h1{
+    padding-top: 150px;
+}
+
+.img1{
+    height: 10%;
+    width: 20;
+    align-items: center;
+    vertical-align: middle;
+    padding-right: 400px;
+
+}
+
+.img2 {
+inset-inline-start: 0px; 
+float: inline-start;
+padding-right: 400px;
+}
+
+#hotpizza {
+    float: left;
+    height: 80%;
+    width: 40%;
+}
+
+#resposive-table {
+    width:50%;
+    height:100px;
+     
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-align:left
+  }
+
+thead {color: green;}
+tbody {color: blue;}
+tfoot {color: red;}
