@@ -128,123 +128,284 @@ Pizza.prototype.calculateTotal = function () {
     this.price *= this.quantity;
 };
 
-// user interface logic
-// $(document).ready(function() {
-//     $("form#new-order").submit(function(event) {
-//         event.preventDefault();
-
-//         var orderSize = $("input#new-size").val();
-//         var orderCrust= $("input#new-size").val();
-//         var orderToppings = $("input#new-size").val();
-//         var orderQuantity = $("input#new-size").val();
-
-
-//         var newOrder = new Order(inputtedFirstName, inputtedLastName);
-
-//         // append pizzas
-//     pizzas.forEach((pizza) => {
-//         $("#pizza").append(`<option value="${pizza.name}">${pizza.name}</option>`);
-//     });
-//     // append pizza sizes
-//     pizzaSizes.forEach((pizzaSize) => {
-//         $("#size").append(
-//             `<option value="${pizzaSize.size}">${pizzaSize.size}-${pizzaSize.price}</option>`
-//         );
-//     });
-
-//     // append pizza crusts
-//     pizzaCrusts.forEach((pizzaCrust) => {
-//         $("#crust").append(
-//             `<option value="${pizzaCrust.name}">${pizzaCrust.name}-${pizzaCrust.price}</option>`
-//         );
-//     });
-
-//     //append pizza toppings
-//     pizzaToppings.forEach((topping) => {
-//         $(".toppings").append(`<div class="col-md-6">
-//         <div class="form-check">
-//           <input class="form-check-input" name="toppings[]" type="checkbox" id="${topping}" value="${topping}">
-//           <label class="form-check-label" for="${topping}">
-//               ${topping}
-//           </label>
-//           </div>
-//         </div>`);
-// }
-
-
+user interface logic
 $(document).ready(function() {
+    $("form#new-order").submit(function(event) {
+        event.preventDefault();
 
-    $("#add-order").click(function() {
-      $("#new-addresses").append('<form id="order-form">' +
-                                 '<div class="form-group">'+
-                                 '<label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>' +
-                                 '<select name="size" id="size" class="form-control">'+
-                                     '<option value="" selected disabled>Size</option> ' +
-                                 '</select>' +
-                                 '</div>'+
-                                 '<div class="form-group">'+
-                                 '<label for="new-crust">Select Pizza Crust <span class="text-danger">*</span></label>'+
-                                 '<select name="crust" id="crust" class="form-control">'+
-                                 '<option value="" selected disabled>Select Crust</option>'+
-                                 '</select>'+
-                                 '</div>'+
-                                 '<div class="form-group">'+
-                                 '<label for="new-toppings">Select Pizza Toppings <span class="text-danger">*</span></label>'+
-                                 '<select name="toppings" id="toppings" class="form-control">'+
-                                 '<option value="" selected disabled>Toppings</option>'+
-                                     '</select>'+
-                                     '</div>');
+        var orderSize = $("input#new-size").val();
+        var orderCrust= $("input#new-size").val();
+        var orderToppings = $("input#new-size").val();
+        var orderQuantity = $("input#new-size").val();
+
+
+        var newOrder = new Order(inputtedFirstName, inputtedLastName);
+
+        // append pizzas
+    pizzas.forEach((pizza) => {
+        $("#pizza").append(`<option value="${pizza.name}">${pizza.name}</option>`);
     });
-  
-//     $("form#new-order").submit(function(event) {
-//       event.preventDefault();
-  
-//       var inputtedFirstName = $("input#new-first-name").val();
-//       var inputtedLastName = $("input#new-last-name").val();
-//       var newContact = new Contact(inputtedFirstName, inputtedLastName);
-  
-//       $(".new-address").each(function() {
-//         var inputtedStreet = $(this).find("input.new-street").val();
-//         var inputtedCity = $(this).find("input.new-city").val();
-//         var inputtedCounty = $(this).find("input.new-county").val();
-//         var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty)
-//         newContact.addresses.push(newAddress)
-//       });
-  
-//       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
-  
-//       Address.prototype.fullAddress = function() {
-//         return this.street + ", " + this.city + ", " + this.county;
-//       }
-  
-//       $(".contact").last().click(function() {
-//         $("#show-contact").show();
-//         $("#show-contact h2").text(newContact.fullName());
-//         $(".first-name").text(newContact.firstName);
-//         $(".last-name").text(newContact.lastName);
-//         $("ul#addresses").text("");
-//         newContact.addresses.forEach(function(address) {
-//           $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
-//         });
-//       });
-  
-//       $("input#new-first-name").val("");
-//       $("input#new-last-name").val("");
-//       $("input.new-street").val("");
-//       $("input.new-city").val("");
-//       $("input.new-county").val("");
-  
-//     });
-//   });
-  
+    // append pizza sizes
+    pizzaSizes.forEach((pizzaSize) => {
+        $("#size").append(
+            `<option value="${pizzaSize.size}">${pizzaSize.size}-${pizzaSize.price}</option>`
+        );
+    });
+
+    // append pizza crusts
+    pizzaCrusts.forEach((pizzaCrust) => {
+        $("#crust").append(
+            `<option value="${pizzaCrust.name}">${pizzaCrust.name}-${pizzaCrust.price}</option>`
+        );
+    });
+
+    //append pizza toppings
+    pizzaToppings.forEach((topping) => {
+        $(".toppings").append(`<div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" name="toppings[]" type="checkbox" id="${topping}" value="${topping}">
+          <label class="form-check-label" for="${topping}">
+              ${topping}
+          </label>
+          </div>
+        </div>`);
+}
+
+
+
 
 function calculateFinalTotal() {
     let total = 0;
-    cart.forEach((pizza) => {
+    box.forEach((pizza) => {
         total += pizza.price;
     });
 
     $(".final-total").html(`Ksh <span class="text-bold">${total}</span> `)
 }
+
+
+ // initialize an empty box
+ const box = [];
+ // check if box is empty
+ if (box.length == 0) {
+     $(".empty-box").show();
+     $(".delivery-button").hide();
+ } else {
+     $(".empty-box").hide();
+ }
+ $("#order-form").on("submit", function (e) {
+     //prevent default action
+     e.preventDefault();
+
+     const selectedPizzaName = $("#pizza").val();
+     const selectedSize = $("#size").val();
+     const selectedCrust = $("#crust").val();
+     const selectedToppings = $("input[name='toppings[]']:checkbox:checked")
+         .map(function () {
+             return $(this).val();
+         })
+         .get();
+     // validation for all fields
+     if (!selectedPizzaName || !selectedSize || !selectedCrust) {
+         $("#error").text("** Input your order** ");
+         return;
+     } else {
+         $("#error").text("");
+     }
+     // box details
+     //check if selected pizza exists in box
+     const boxPizza = box.find((pizza) => {
+         const sameToppings =
+             JSON.stringify(pizza.toppings) == JSON.stringify(selectedToppings);
+
+         return (
+             pizza.name == selectedPizzaName &&
+             pizza.size.size == selectedSize &&
+             sameToppings
+         );
+     });
+     //if it exists increase quantity
+     if (boxPizza) {
+         boxPizza.setQuantity(boxPizza.quantity + 1);
+     } else {
+         const pizza = new Pizza(selectedPizzaName);
+         pizza.setSize(selectedSize);
+         pizza.setCrust(selectedCrust);
+         pizza.setTopings(selectedToppings);
+
+         box.push(pizza);
+     }
+     // empty tbody first
+     $(".order-table tbody").html("");
+     //loop and append
+     box.forEach((pizza, boxIndex) => {
+         $(".order-table tbody").append(`
+         <tr>
+             <td>${pizza.name}</td>
+             <td>${pizza.size.size}</td>
+             <td>${pizza.crust.name}</td>
+             <td>${pizza.toppings.join(", ")}</td>
+             <td>
+                 <input type="number" min="1" class="input-sm form-control pizza-quantity" data-box-index="${boxIndex}" value="${pizza.quantity
+             }" />
+             </td>
+             <td>Ksh ${pizza.price}</td>
+         </tr>
+     `);
+         // show checkout button
+         $(".delivery-button").show();
+         // console.log(pizza);
+         //update final total
+         calculateFinalTotal();
+
+     });
+
+ });
+ //pizza quantity change event
+ $("body").on("change", ".pizza-quantity", function () {
+     const quantity = $(this).val();
+     const boxIndex = $(this).data("box-index");
+     const pizza = box[boxIndex];
+
+     if (quantity > 0) {
+         pizza.setQuantity(quantity);
+         // update line total
+         $(this).parent().next().html(`Ksh <span class="text-bold">${pizza.price}</span> `);
+     }
+
+     //update final total
+     calculateFinalTotal();
+ });
+
+ // delivery modal
+ $("#delivery-form").on("submit", function (e) {
+     //prevent default action
+     e.preventDefault();
+     // check if the user has selected the radio button
+     const selectd = $("input[name='deliveryMethod']:checked");
+     if (selectd.val() == undefined) {
+         $(".delivery-option").html("<p class='text-danger'>** Please select the delivery method **</p>");
+         return;
+     } else {
+         $(".delivery-option").text("");
+         // check which radio button was selected
+         if (selectd.val() == "delivery") {
+             $("#location-input-details").show();
+             // user inputs variables
+             const customerName = $("#customerName").val();
+             const customerPhone = $("#customerPhone").val();
+             const customerLocation = $("#customerLocation").val();
+             const additionalInfo = $("#additionalInfo").val();
+             // validate user inputs
+             if (!customerName || !customerPhone || !customerLocation) {
+                 $(".error-delivery-location").text("Fill in all input fields with * to proceed!")
+                 return;
+             } else {
+                 $(".error-delivery-location").text("");
+             }
+             function calculatFinalTotal() {
+                 let total = 0;
+                 box.forEach((pizza) => {
+                     total += pizza.price;
+                 });
+                 const getTotalPlusDeliveryFee = total + 128;
+                 console.log(getTotalPlusDeliveryFee);
+                 console.log(box);
+                 $("#select-delivery-method").hide();
+                 $(".delivery-head").append(`
+                 <div class="alert alert-success" role="alert">Hello ${customerName}. Order successfully processed. Your order will be delivered to your location(${customerLocation})🙂</div>
+                     <div class="d-flex justify-content-between">
+                         <div>
+                             <h5>Order Summary</h5>
+                         </div>
+                         <div>
+                             <p class="color-palace float-right">Total Ksh <span class="text-bold">${getTotalPlusDeliveryFee}</span></p>
+                         </div>
+                     </div>
+                 `);
+                 //loop and append
+                box.forEach((pizza, boxIndex) => {
+                     $(".delivery-bottom").append(`
+                     <div>
+                     <div class="row">
+                         <div class="col-md-12">
+                             <ol class="list-group">
+                                 <li class="list-group-item d-flex justify-content-between align-items-start">
+                                     <div class="ms-2 me-auto">
+                                         <div class="fw-bold">${pizza.name}(${pizza.size.size})</div>
+                                         Crust - ${pizza.crust.name} <br>
+                                         Toppings - ${pizza.toppings.join(", ")}
+                                     </div>
+                                     <span class="badge bg-primary rounded-pill">${pizza.quantity}</span>
+                                 </li>
+                             </ol>
+                         </div>
+                     </div>
+                    </div>
+                     `);
+                 });
+
+             }
+             calculateFinalTotal()
+             // $("#deliveryMethodModal").hide();
+         } else if (selectd.val() == "pickup") {
+             function calculateFinalTotal() {
+                 let total = 0;
+                box.forEach((pizza) => {
+                     total += pizza.price;
+                 });
+                 const getTotalPlusDeliveryFee = total;
+                 console.log(getTotalPlusDeliveryFee);
+                 $("#select-delivery-method").hide();
+                 $(".delivery-head").append(`
+                 <div class="alert alert-success" role="alert">Hello. Order successfully processed. Your order will be delivered to your location in 30 minutes</div>
+                     <div class="d-flex justify-content-between">
+                         <div>
+                             <h5>Order Summary</h5>
+                         </div>
+                         <div>
+                             <p class="color-palace float-right">Total Ksh <span class="text-bold">${getTotalPlusDeliveryFee}</span></p>
+                         </div>
+                     </div>
+                 `);
+                 //loop and append
+                 box.forEach((pizza, boxIndex) => {
+                     $(".delivery-bottom").append(`
+                     <div>
+                     <div class="row">
+                         <div class="col-md-12">
+                             <ol class="list-group">
+                                 <li class="list-group-item d-flex justify-content-between align-items-start">
+                                     <div class="ms-2 me-auto">
+                                         <div class="fw-bold">${pizza.name}(${pizza.size.size})</div>
+                                         Crust - ${pizza.crust.name} <br>
+                                         Toppings - ${pizza.toppings.join(", ")}
+                                     </div>
+                                     <span class="badge bg-primary rounded-pill">${pizza.quantity}</span>
+                                 </li>
+                             </ol>
+                         </div>
+                     </div>
+                    </div>
+                     `);
+                 });
+
+             }
+             calculateFinalTotal()
+         }
+     }
+
+ })
+});
+
+
+
+
+
+
+
+
+
+
 
 
