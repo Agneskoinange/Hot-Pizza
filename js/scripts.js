@@ -1,23 +1,25 @@
 
 // Business logic
-function Pizza (order) {
-    this.size = Sizes;
-    this.crust = Crusts;
+function Pizza (name) {
+    this.name = name;
     this.toppings = [];
     this.quantity = 1;
     this.price=0;   
 }
-
-// size
-var Sizes = ["small", "medium", "large"];
-
-// crusts
-
-var Crusts = ["Crispy", "Stuffed", "Gluten-free"];
-
-//toppings
-var Toppings = ["Mushrooms", "Butternut", "Cauliflower", "Bacon", "Tomatoes"];
-
+// Pizza name
+const pizzanames = [
+    { name: "Pepperoni" },
+    { name: "Chicken Tikka" },
+    { name: "Gamberi" },
+    { name: "Pulled Pork" },
+    { name: "Margharita" },
+    { name: "Marinara" },
+    { name: "Mushroom" },
+    { name: "Spicy Veggie" },
+    { name: "Bbq Pork" },
+    { name: "Grilled Pork" },
+    { name: "Hawaiian" },
+];
 
 // pizza sizes
 const pizzaSizes = [
@@ -79,7 +81,7 @@ const pizzaToppings = [
 
 ];
 
-// set pizza size
+// order pizza size
 Pizza.prototype.orderSize = function (size) {
     const pizzaSize = pizzaSizes.find((pizzaSize) => pizzaSize.size == size);
     if (pizzaSize) {
@@ -88,7 +90,7 @@ Pizza.prototype.orderSize = function (size) {
     }
 };
 
-//set pizza crust
+//order pizza crust
 Pizza.prototype.orderCrust = function (crust) {
     const pizzaCrust = pizzaCrusts.find((pizzaCrust) => pizzaCrust.crust == crust);
     if (pizzaCrust) {
@@ -96,13 +98,13 @@ Pizza.prototype.orderCrust = function (crust) {
         this.calculateTotal();
     }
 };
-
+//order pizza toppings
 Pizza.prototype.orderToppings = function (toppings) {
     this.toppings = toppings;
     this.calculateTotal();
 };
 
-//set quantity
+//order quantity
 Pizza.prototype.orderQuantity = function (quantity) {
     this.quantity = +quantity;
     this.calculateTotal();
@@ -119,8 +121,9 @@ Pizza.prototype.calculateTotal = function () {
         this.price = this.price + this.crust.price;
     }
 
-    // add the price of toppings
-    this.price += this.toppings.length * toppingPrice;
+    if (this.toppings) {
+        this.price = this.price + this.toppings.length * toppingPrice;
+    }
 
     this.price *= this.quantity;
 };
@@ -193,44 +196,56 @@ $(document).ready(function() {
                                      '</div>');
     });
   
-    $("form#new-order").submit(function(event) {
-      event.preventDefault();
+//     $("form#new-order").submit(function(event) {
+//       event.preventDefault();
   
-      var inputtedFirstName = $("input#new-first-name").val();
-      var inputtedLastName = $("input#new-last-name").val();
-      var newContact = new Contact(inputtedFirstName, inputtedLastName);
+//       var inputtedFirstName = $("input#new-first-name").val();
+//       var inputtedLastName = $("input#new-last-name").val();
+//       var newContact = new Contact(inputtedFirstName, inputtedLastName);
   
-      $(".new-address").each(function() {
-        var inputtedStreet = $(this).find("input.new-street").val();
-        var inputtedCity = $(this).find("input.new-city").val();
-        var inputtedCounty = $(this).find("input.new-county").val();
-        var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty)
-        newContact.addresses.push(newAddress)
-      });
+//       $(".new-address").each(function() {
+//         var inputtedStreet = $(this).find("input.new-street").val();
+//         var inputtedCity = $(this).find("input.new-city").val();
+//         var inputtedCounty = $(this).find("input.new-county").val();
+//         var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty)
+//         newContact.addresses.push(newAddress)
+//       });
   
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+//       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
   
-      Address.prototype.fullAddress = function() {
-        return this.street + ", " + this.city + ", " + this.county;
-      }
+//       Address.prototype.fullAddress = function() {
+//         return this.street + ", " + this.city + ", " + this.county;
+//       }
   
-      $(".contact").last().click(function() {
-        $("#show-contact").show();
-        $("#show-contact h2").text(newContact.fullName());
-        $(".first-name").text(newContact.firstName);
-        $(".last-name").text(newContact.lastName);
-        $("ul#addresses").text("");
-        newContact.addresses.forEach(function(address) {
-          $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
-        });
-      });
+//       $(".contact").last().click(function() {
+//         $("#show-contact").show();
+//         $("#show-contact h2").text(newContact.fullName());
+//         $(".first-name").text(newContact.firstName);
+//         $(".last-name").text(newContact.lastName);
+//         $("ul#addresses").text("");
+//         newContact.addresses.forEach(function(address) {
+//           $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+//         });
+//       });
   
-      $("input#new-first-name").val("");
-      $("input#new-last-name").val("");
-      $("input.new-street").val("");
-      $("input.new-city").val("");
-      $("input.new-county").val("");
+//       $("input#new-first-name").val("");
+//       $("input#new-last-name").val("");
+//       $("input.new-street").val("");
+//       $("input.new-city").val("");
+//       $("input.new-county").val("");
   
+//     });
+//   });
+  
+
+function calculateFinalTotal() {
+    let total = 0;
+    cart.forEach((pizza) => {
+        total += pizza.price;
     });
-  });
-  
+
+    $(".final-total").html(`Ksh <span class="text-bold">${total}</span> `);
+
+}
+
+

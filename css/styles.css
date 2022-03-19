@@ -1,33 +1,7 @@
-/* Container for flexboxes */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Create four three columns */
-  .column {
-    flex: 30%;
-    padding: 20px;
-  }
-  
-  /* On screens that are 992px wide or less, go from four columns to two columns */
-  @media screen and (max-width: 992px) {
-    .column {
-      flex: 50%;
-    }
-  }
-  
-  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .row {
-      flex-direction: column;
-    }
-  }
-
 
 #home {
 
-     background-color: rgb(248, 241, 241);
+    background-color: rgb(248, 241, 241);
     background-size:cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -97,6 +71,9 @@ float:left;
     width: 40%;
 }
 
+
+
+
 #resposive-table {
     width:50%;
     height:100px;
@@ -113,3 +90,19 @@ thead {
 thead {color: green;}
 tbody {color: blue;}
 tfoot {color: red;}
+
+
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (min-width:  600px) {
+  .row {
+    flex-direction:inherit;
+  }
+}

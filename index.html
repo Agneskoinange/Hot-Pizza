@@ -103,9 +103,9 @@
             <form id="order-form">
                     <div class="form-group">
 
-                        <label for="">Select flavor <span class="text-danger">*</span></label>
+                        <label for="">Select name <span class="text-danger">*</span></label>
                         <select name="pizza" id="pizza" class="form-control">
-                            <option value="" selected disabled>Select flavor</option>
+                            <option value="" selected disabled>Select name </option>
                                 <option>Pepperoni</option>
                                 <option>Chicken Tikka</option>
                                 <option>Gamberi</option>
@@ -115,8 +115,6 @@
                                 <option>Mushroom</option>
                                 <option>Spicy Veggie</option>
                                 <option>Bbq Pork</option>
-                                <option>Chicken Tikka</option>
-                                <option>Gamberi</option>
                                 <option>Grilled Pork</option>
                                 <option>Hawaiian</option>
                         </select>
@@ -138,12 +136,41 @@
                         <option>crispy</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="new-toppings">Select Pizza Toppings <span class="text-danger">*</span></label>
-                    <select name="toppings" id="toppings" class="form-control">
-                        <option value="" selected disabled>Toppings</option>
-                    </select>
-                </div>
+                <div class="form-check">
+                    <p>Select Pizza Toppings</p>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="toppings" id="toppings" >
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Mushrooms
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Butternut
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Cauliflower
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Bacon
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Tomatoes
+                    </label>
+                  </div>
+
                 <div class="button">
                     <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white">Send Order<i class="btn-btn-primary"></i></button>
                 </div>
@@ -159,6 +186,11 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    <tr>
+                      <td>name</td>
+                      <td>cost</td>
+                    </tr>
                     <tr>
                       <td>Size</td>
                       <td>cost</td>
