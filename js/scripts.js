@@ -1,8 +1,8 @@
 
 // Business logic
 function Pizza (order) {
-    this.size = size;
-    this.crust = crust;
+    this.size = Sizes;
+    this.crust = Crusts;
     this.toppings = [];
     this.quantity = 1;
     this.price=0;   
@@ -16,11 +16,11 @@ var Sizes = ["small", "medium", "large"];
 var Crusts = ["Crispy", "Stuffed", "Gluten-free"];
 
 //toppings
-const pizzaToppings = ["Mushrooms", "Butternut", "Cauliflower", "Bacon", "Tomatoes"];
+var Toppings = ["Mushrooms", "Butternut", "Cauliflower", "Bacon", "Tomatoes"];
 
 
 // pizza sizes
-const pizzaSize = [
+const pizzaSizes = [
     {
         size: "small",
         price: 400,
@@ -50,22 +50,54 @@ const pizzaCrusts = [
         price: 250,
     },
 ];
+// pizza Toppings
+const pizzaToppings = [
+    {
+        name: "Mushrooms",
+        price: 60,
+    },
 
-const toppingPrice = 80;
+    {
+        name: "Butternut",
+        price: 50,
+    },
+
+    {
+        name: "Cauliflower",
+        price: 70,
+    },
+
+    {
+        name: "Bacon",
+        price: 80,
+    },
+
+    {
+        name: "Tomatoes",
+        price: 40,
+    },
+
+];
 
 // set pizza size
 Pizza.prototype.orderSize = function (size) {
-    this.size = pizzaSize;
-    this.calculateTotal();
+    const pizzaSize = pizzaSizes.find((pizzaSize) => pizzaSize.size == size);
+    if (pizzaSize) {
+        this.size = pizzaSize;
+        this.calculateTotal();
+    }
 };
 
 //set pizza crust
 Pizza.prototype.orderCrust = function (crust) {
-    this.crust = pizzaCrust;
-    this.calculateTotal();
+    const pizzaCrust = pizzaCrusts.find((pizzaCrust) => pizzaCrust.crust == crust);
+    if (pizzaCrust) {
+        this.crust = pizzaCrust;
+        this.calculateTotal();
+    }
 };
 
-Pizza.prototype.orderTopings = function (toppings) {
+Pizza.prototype.orderToppings = function (toppings) {
     this.toppings = toppings;
     this.calculateTotal();
 };
@@ -98,5 +130,40 @@ $(document).ready(function() {
     $("form#new-order").submit(function(event) {
         event.preventDefault();
 
-        var inputtedSize = $("input#new-size").val();
+        var orderSize = $("input#new-size").val();
+        var orderCrust= $("input#new-size").val();
+        var orderToppings = $("input#new-size").val();
+        var orderQuantity = $("input#new-size").val();
+
+
+        var newOrder = new Order(inputtedFirstName, inputtedLastName);
+
+        // append pizzas
+    pizzas.forEach((pizza) => {
+        $("#pizza").append(`<option value="${pizza.name}">${pizza.name}</option>`);
+    });
+    // append pizza sizes
+    pizzaSizes.forEach((pizzaSize) => {
+        $("#size").append(
+            `<option value="${pizzaSize.size}">${pizzaSize.size}-${pizzaSize.price}</option>`
+        );
+    });
+
+    // append pizza crusts
+    pizzaCrusts.forEach((pizzaCrust) => {
+        $("#crust").append(
+            `<option value="${pizzaCrust.name}">${pizzaCrust.name}-${pizzaCrust.price}</option>`
+        );
+    });
+
+    //append pizza toppings
+    pizzaToppings.forEach((topping) => {
+        $(".toppings").append(`<div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" name="toppings[]" type="checkbox" id="${topping}" value="${topping}">
+          <label class="form-check-label" for="${topping}">
+              ${topping}
+          </label>
+          </div>
+        </div>`);
 }
