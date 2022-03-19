@@ -4,7 +4,7 @@ function Pizza (name) {
     this.name = name;
     this.toppings = [];
     this.quantity = 1;
-    this.price=0;   
+    this.cost=0;   
 }
 // Pizza name
 const pizzanames = [
@@ -25,15 +25,15 @@ const pizzanames = [
 const pizzaSizes = [
     {
         size: "small",
-        price: 400,
+        cost: 400,
     },
     {
         size: "medium",
-        price: 700,
+        cost: 700,
     },
     {
         size: "large",
-        price: 1000,
+        cost: 1000,
     },
 ];
 
@@ -41,42 +41,42 @@ const pizzaSizes = [
 const pizzaCrusts = [
     {
         name: "crispy",
-        price: 240,
+        cost: 240,
     },
     {
         name: "stuffed",
-        price: 200,
+        cost: 200,
     },
     {
         name: "Glutten free",
-        price: 250,
+        cost: 250,
     },
 ];
 // pizza Toppings
 const pizzaToppings = [
     {
         name: "Mushrooms",
-        price: 60,
+        cost: 60,
     },
 
     {
         name: "Butternut",
-        price: 50,
+        cost: 50,
     },
 
     {
         name: "Cauliflower",
-        price: 70,
+        cost: 70,
     },
 
     {
         name: "Bacon",
-        price: 80,
+        cost: 80,
     },
 
     {
         name: "Tomatoes",
-        price: 40,
+        cost: 40,
     },
 
 ];
@@ -114,33 +114,24 @@ Pizza.prototype.orderQuantity = function (quantity) {
 Pizza.prototype.calculateTotal = function () {
 
     if (this.size) {
-        this.price = this.size.price;
+        this.cost = this.size.cost;
     }
 
     if (this.crust) {
-        this.price = this.price + this.crust.price;
+        this.cost = this.cost + this.crust.cost;
     }
 
     if (this.toppings) {
-        this.price = this.price + this.toppings.length * toppingPrice;
+        this.cost = this.cost + this.toppings.length * toppingcost;
     }
 
-    this.price *= this.quantity;
+    this.cost *= this.quantity;
 };
 
-user interface logic
+// user interface logic
 $(document).ready(function() {
     $("form#new-order").submit(function(event) {
         event.preventDefault();
-
-        var orderSize = $("input#new-size").val();
-        var orderCrust= $("input#new-size").val();
-        var orderToppings = $("input#new-size").val();
-        var orderQuantity = $("input#new-size").val();
-
-
-        var newOrder = new Order(inputtedFirstName, inputtedLastName);
-
         // append pizzas
     pizzas.forEach((pizza) => {
         $("#pizza").append(`<option value="${pizza.name}">${pizza.name}</option>`);
@@ -148,14 +139,14 @@ $(document).ready(function() {
     // append pizza sizes
     pizzaSizes.forEach((pizzaSize) => {
         $("#size").append(
-            `<option value="${pizzaSize.size}">${pizzaSize.size}-${pizzaSize.price}</option>`
+            `<option value="${pizzaSize.size}">${pizzaSize.size}-${pizzaSize.cost}</option>`
         );
     });
 
     // append pizza crusts
     pizzaCrusts.forEach((pizzaCrust) => {
         $("#crust").append(
-            `<option value="${pizzaCrust.name}">${pizzaCrust.name}-${pizzaCrust.price}</option>`
+            `<option value="${pizzaCrust.name}">${pizzaCrust.name}-${pizzaCrust.cost}</option>`
         );
     });
 
@@ -169,19 +160,19 @@ $(document).ready(function() {
           </label>
           </div>
         </div>`);
-}
+});
 
 
 
 
-function calculateFinalTotal() {
+    function calculateFinalTotal() {
     let total = 0;
     box.forEach((pizza) => {
-        total += pizza.price;
+        total += pizza.cost;
     });
 
     $(".final-total").html(`Ksh <span class="text-bold">${total}</span> `)
-}
+};
 
 
  // initialize an empty box
@@ -249,7 +240,7 @@ function calculateFinalTotal() {
                  <input type="number" min="1" class="input-sm form-control pizza-quantity" data-box-index="${boxIndex}" value="${pizza.quantity
              }" />
              </td>
-             <td>Ksh ${pizza.price}</td>
+             <td>Ksh ${pizza.cost}</td>
          </tr>
      `);
          // show checkout button
@@ -270,7 +261,7 @@ function calculateFinalTotal() {
      if (quantity > 0) {
          pizza.setQuantity(quantity);
          // update line total
-         $(this).parent().next().html(`Ksh <span class="text-bold">${pizza.price}</span> `);
+         $(this).parent().next().html(`Ksh <span class="text-bold">${pizza.cost}</span> `);
      }
 
      //update final total
@@ -306,7 +297,7 @@ function calculateFinalTotal() {
              function calculatFinalTotal() {
                  let total = 0;
                  box.forEach((pizza) => {
-                     total += pizza.price;
+                     total += pizza.cost;
                  });
                  const getTotalPlusDeliveryFee = total + 128;
                  console.log(getTotalPlusDeliveryFee);
@@ -352,7 +343,7 @@ function calculateFinalTotal() {
              function calculateFinalTotal() {
                  let total = 0;
                 box.forEach((pizza) => {
-                     total += pizza.price;
+                     total += pizza.cost;
                  });
                  const getTotalPlusDeliveryFee = total;
                  console.log(getTotalPlusDeliveryFee);
@@ -399,13 +390,4 @@ function calculateFinalTotal() {
 });
 
 
-
-
-
-
-
-
-
-
-
-
+});

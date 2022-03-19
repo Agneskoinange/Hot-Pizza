@@ -10,7 +10,7 @@
     padding: 10px;
     margin-left: 10px;
     text-emphasis-color: #ffffff;
-    background-attachment:local;
+    background-attachment:fixed;
     background-size:cover;  
   }
 
@@ -75,7 +75,7 @@ float:left;
 #Products {
   align-items: baseline ;
 }
-
+ /* order section */
 #resposive-table {
     width:50%;
     height:100px;
@@ -101,23 +101,15 @@ tfoot {color: red;}
   font-size: 13px;
 }
 
-/* a {
-  text-decoration: none;
-  color: #fd9d3e;
-}
-
-a:hover {
-  color: #fd9d3e;
-} */
 
 #contactus {
-  /* background-image: url("/Images/Img2.jpg"); */
+ padding-top: 500px;
   background-color: rgb(248, 241, 241);
   background-size:cover;
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
-  height:100%;
+  height: 30%;
   
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
@@ -131,4 +123,4 @@ a:hover {
   .row {
     flex-direction:inherit;
   }
-}
+}};
