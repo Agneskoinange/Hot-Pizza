@@ -1,4 +1,28 @@
-
+/* Container for flexboxes */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create four three columns */
+  .column {
+    flex: 30%;
+    padding: 20px;
+  }
+  
+  /* On screens that are 992px wide or less, go from four columns to two columns */
+  @media screen and (max-width: 992px) {
+    .column {
+      flex: 50%;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .row {
+      flex-direction: column;
+    }
+  }
 
 
 #home {
@@ -19,9 +43,9 @@
   #home {
     text-align: center;
     text-emphasis: none;
-    text-decoration: rgb(212, 155, 23) ;
-    color:rgb(212, 155, 23) ;;
-    padding-bottom: 150px;
+    text-decoration: rgb(248,147,45); 
+    color:rgb(248,147,45);
+    padding-bottom: 100px;
     padding-top: 0px;
     text-align: justify;
   }
@@ -41,29 +65,30 @@
     font-size: 18px;
 }
 .navbar{
-   /* remove padding*/
-    padding-top: 0;
-    padding-bottom: 0;
     text-align: center;
     float: inline-center;
+    
 }
+
 #home h1{
     padding-top: 150px;
 }
 
 .img1{
     height: 10%;
-    width: 20;
-    align-items: center;
-    vertical-align: middle;
-    padding-right: 400px;
+    width: 0%;
+    align-items: left;
+    vertical-align: left;
+    padding-right: 0px;
 
 }
 
 .img2 {
 inset-inline-start: 0px; 
 float: inline-start;
-padding-right: 400px;
+padding-left: 0px;
+float:left; 
+
 }
 
 #hotpizza {
