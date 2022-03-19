@@ -56,12 +56,14 @@
     width: 20;
     align-items: center;
     vertical-align: middle;
-    padding-right: 300px;
+    padding-right: 400px;
 
 }
 
 .img2 {
-    
+inset-inline-start: 0px; 
+float: inline-start;
+padding-right: 400px;
 }
 
 #hotpizza {
