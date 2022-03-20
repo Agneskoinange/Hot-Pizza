@@ -9,14 +9,14 @@
     <!-- jquery link -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
     <!-- javascript link -->
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/scripts.js"></script>
     <!-- font link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Boostrap cdn link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--styles.css link -->
     <link href="css/styles.css" rel="stylesheet">
-    <script src="./js/scripts.js"></script>
+    
     <title>Hot-Pizza</title>
 </head>
 <body>
@@ -104,16 +104,16 @@
 </div>
 
 <!-- ordering section -->
-<div class="container" class="order" id="orders">
+<div class="container" class="order" >
     <div class="row">
         <div class="col-md-6">
             <h2>Order Here</h2>
             <p>Best palace with hot pizza</p>
             <form id="order-form">
-                    <div class="form-group">
+                    <div class="form-group" id="orders">
 
                         <label for="">Select name <span class="text-danger">*</span></label>
-                        <select name="pizza" id="pizza" class="form-control">
+                        <select name="pizza" id="name" class="form-control">
                             <option value="" selected disabled>Select name </option>
                                 <option>Pepperoni</option>
                                 <option>Chicken Tikka</option>
@@ -128,13 +128,13 @@
                                 <option>Hawaiian</option>
                         </select>
 
-                    <label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>
-                    <select name="size" id="size" class="form-control">
-                        <option value="" selected disabled>Select Size</option>
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
-                    </select>
+                        <label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>
+                        <select name="size" id="size" class="form-control">
+                            <option value="" selected disabled>Select Size</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                        </select>
                 </div>
                 <div class="form-group">
                     <label for="new-crust">Select Pizza Crust <span class="text-danger">*</span></label>
@@ -144,44 +144,45 @@
                         <option>Stuffed</option>
                         <option>crispy</option>
                     </select>
-                </div>
+                </div><br>
+                <p><strong>Select Pizza Toppings</strong></p>
                 <div class="form-check">
-                    <p>Select Pizza Toppings</p>
+                    
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="toppings" id="toppings" >
                     <label class="form-check-label" for="flexCheckDefault">
                         Mushrooms
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckDefault">
                         Butternut
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckDefault">
                         Cauliflower
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckDefault">
                         Bacon
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckDefault">
                         Tomatoes
                     </label>
                   </div>
 
                 <div class="button">
-                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white">Send Order<i class="btn-btn-primary"></i></button>
+                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="myFunction()">Send Order<i class="btn-btn-primary"></i></button>
                 </div>
             </form>
         </div>
@@ -220,7 +221,8 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                      <td class="cost" >Total cost</td>
+
+                      <td class="cost">Total cost</td>
                       <td>cost</td>
       
                     </tr>
@@ -233,104 +235,20 @@
                     </tr>
                 </tfoot>
             </table>
-                   <!-- order summary -->
+                   <!-- order summary and delivery options -->
                   <div class="text-end">
-                        <p class="Final-total cost">Total cost: Ksh <span class="text-bold"></span></p>
+                        <p class="Final-total cost" > <button id="cal" onclick="myFunction()">Total cost: Ksh</button> <span class="text-bold"></span></p>
                     </div>
                     <div class="delivery-button float-end" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white">
-                        <button class="btn" data-bs-toggle="summary" data-bs-target="#deliveryMethod" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white">Delivery Check <i
-                                class="fa fa-arrow-right"></i></button>
-                  </div>
-                
+                        <button class="btn" data-bs-toggle="summary" data-bs-target="#deliveryMethod" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="response ()" >Delivery Check <i
+                                class="fa fa-arrow-right" ></i></button>
+                  </div>    
             
         </div>    
     </div>
 
-    <!-- Delivery -->
-    <div class="modal fade" id="deliveryMethodModal" tabindex="-1" aria-labelledby="deliveryMethodModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deliveryMethodModalLabel">DELIVERY METHOD</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="select-delivery-method">
-                        <p>Choose your delivery method! <span class="text-center">*</span></p>
-                        <p class="delivery-option text-danger"></p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryMethod1"
-                                value="pickup">
-                            <label class="form-check-label" for="deliveryMethod1">
-                                Pickup
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryMethod2"
-                                value="delivery">
-                            <label class="form-check-label" for="deliveryMethod2">
-                                Deliverered to your location
-                            </label>
-                            <p>Please ensure you have entered your location . for <span class="color-palace">KSh 128</span></p>
-                        </div>
-                        <div class="location mt-5">
-                            <form id="delivery-form">
-                                <div id="location-input-details">
-                                    <h5>Delivery Details</h5>
-                                    <p class="text-danger error-delivery-location"></p>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Name <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="name" id="customerName">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Phone Number <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="number" class="form-control" name="phone"
-                                                    id="customerPhone">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Location <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="location"
-                                                    id="customerLocation">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Additional
-                                                    Information
-                                                </label>
-                                                <textarea name="additionalInfo" class="form-control" id="additionalInfo"
-                                                    rows="2"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn" id="checkout-button">Checkout</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- div to display the summary of all the orders -->
-                    <div id="summary-order">
-                        <div class="delivery-head"></div>
-                        <div class="delivery-bottom"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+    
 </div>
 
 
