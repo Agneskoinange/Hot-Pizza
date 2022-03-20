@@ -137,9 +137,9 @@
 <a name="checkout"> 
     <div class="container">
        <div class=" row order">
-            <h1>Order now!</h1>
+         <div class="col-md-6">
+            <h1>Order Here!</h1>
          <br>
-         <div class=""> 
             <form action="">
                 <div class="form-group">
                     <label for="name">Select name</label>
@@ -221,57 +221,68 @@
                 </label>
               </div><br>
             <br>
-            
+        </div> 
+        <div class="col-md-6">
             <br>
             <a href="#order1">
                 <button id="btn">Order</button>
-            </a>    
-         </form>
-        </div>
-        <div class="summary">
-            <h1 class="ordersummary">This is what you have ordered:</h1>
-            <ol id="yourOrder" class="oder-sum">
-            </ol>
+            </a>      
+          </form>
     
-            <div class="mx-auto d-block" deliver-pick >
-                <button class="transport"> Deliver Check</button>
+
+
+         
+            <div class="summary">
+                <h1 class="ordersummary">This is what you have ordered:</h1>
+                <ol id="yourOrder" class="oder-sum">
+                </ol>
+        
+                <div class="mx-auto d-block" deliver-pick >
+                    <button class="transport"> Deliver Check</button>
+                    
                 
-            
+                
+                </div>
+        
+            </div>
+        
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="deliver-check">
+                <!-- <h4>Please provide your location for deliveries.</h4> -->
+                <br>
+                <form onsubmit = "customerValidate()" action="">
+                    <div class="form-group">
+                        <label for="name">Please enter you name:</label>
+                        <input id="customername" class="form-control" type="text">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="phone">Please enter your phone number:</label>
+                        <input id="customerphone" class="form-control" type="number">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="location">Please enter your location:</label>
+                        <input id="customerlocation" class="form-control" type="text">
+                    </div>
+                    <br>
+                    <button id="deliver">Let's deliver</button>
+                </form>
+            </div>
+        
             
             </div>
-    
+            <br><br>
+
+
+         </div>
         </div>
-    
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="deliver-check">
-            <!-- <h4>Please provide your location for deliveries.</h4> -->
-            <br>
-            <form onsubmit = "customerValidate()" action="">
-                <div class="form-group">
-                    <label for="name">Please enter you name:</label>
-                    <input id="customername" class="form-control" type="text">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="phone">Please enter your phone number:</label>
-                    <input id="customerphone" class="form-control" type="number">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="location">Please enter your location:</label>
-                    <input id="customerlocation" class="form-control" type="text">
-                </div>
-                <br>
-                <button id="deliver">Let's deliver</button>
-            </form>
-        </div>
-    
-        
-    </div>
-    <br><br>
+
+
+       
 
 <div class=container-fluid id="contactus" style= padding-top:50px>
     <div class="row col-md-12">
