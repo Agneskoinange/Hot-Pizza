@@ -24,7 +24,7 @@
     text-align: justify;
   }
     
-    li {
+    .nav-items li {
         border-bottom: 1px solid #555;
         display: inline;
      }
@@ -73,13 +73,17 @@ float:left;
 
 
 #products {
-  background-color: rgb(248, 241, 241);
-  align-items: inline ;
-  height: 100%;
-  width: 100%;
+  background-color: rgb(135,124,131);
 }
  /* order section */
+
+ .ordering {
+  background-color: rgb(248, 241, 241);
+  margin-top: 50px;
+ }
+
 #resposive-table {
+  
     width:50%;
     height:100px;
      
@@ -106,7 +110,7 @@ tfoot {color: red;}
 
 
 #contactus {
- background-color: rgb(248, 241, 241);
+ background-color: rgb(135,124,131);
   /* background-size:cover; */
   background-position: center center;
   background-repeat: no-repeat;

@@ -64,15 +64,15 @@
             <div class="col-md-12">
 
                 <img src="./Images/img9.jpg" alt=" hot pizza" id="hotpizza">
-                <h1 style="text-align:center">About us</h1>
-                <p>Hot Pizza Palace is a pizza point located in Nairobi along Thika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satisfy most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your liking.All we are saying is that "how you like it is how you will get it". Simply! It is all about you</p>
+                <h1 style="text-align:center;">About us</h1>
+                <p style="text-align:center; padding-bottom: 50px;"> Hot Pizza Palace is a pizza point located in Nairobi along Thika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satisfy most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your liking.All we are saying is that "how you like it is how you will get it". Simply! It is all about you</p>
             </div>
         </div>
 
     </div>
 </div>
 <!-- Our products -->
-<div class="container" class="Products" id="products">
+<div class="container-fluid" class="Products" id="products">
     <div class="row">
         <div class="col-md-12">
             <h2 style="text-align:center; padding-bottom: 30px;">Our Products</h2>
@@ -81,20 +81,51 @@
 
     <div class="row">
         <div class="col-md-4">
-            <p>Butternut toppings</p>
-            <img src="./Images/pexels-gilly-topicha-10779657.jpg" alt=" hot pizza" id="hotpizza">
-            
+            <h4>Pizza names</h4>
+              <ul>
+                <li>Pepperoni</li>
+                <li>Chicken Tikka</li>
+                <li>Pulled Pork</li>
+                <li>Margharita</li>
+                <li>Marinara</li>
+                <li>Mushroom</li>
+                <li>Spicy Veggie</li>
+                <li>Bbq Pork</li>
+                <li>Grilled Pork</li> 
+                <li>Hawaiian</li>
+              </ul>
+
+            <h4>Pizza Sizes</h4>
+              <ul>
+                <li>Large ksh. 900</li>
+                <li>Medium ksh. 700</li>
+                <li>Small ksh. 500</li>
+              </ul>
+
         </div>
 
         <div class="col-md-4">
-            <p>Bacon Toppings</p>
-            <img src="./Images/vitalii-chernopyskyi-Oxb84ENcFfU-unsplash.jpg" alt=" hot pizza" id="hotpizza">
-            
+            <h4>Pizza Crust</h4>
+            <ul>
+                <li>Crispy ksh. 250</li>
+                <li>Stuffed ksh. 200</li>
+                <li>Gluten free ksh. 180</li>
+            </ul>
+
+            <h4>Pizza Toppings</h4>
+            <ul>
+                <li>Mushrooms ksh.  100</li>
+                <li>Butternut ksh. 50</li>
+                <li>Cauliflower ksh. 70</li>
+                <li>Bacon ksh. 80</li>
+                <li>Tomatoes ksh. 40</li>
+            </ul>
+
         </div>
 
         <div class="col-md-4">
             <p>Roasted Tomato toppings</p>
-            <img src="./Images/pexels-valeria-boltneva-9957549.jpg" alt=" hot pizza" id="hotpizza">
+            <img src="./Images/Set_1.png" alt=" hot pizza" id="hotpizza" style="width:400px; height:400px; float: inline-end;">
             
         </div>
 
@@ -104,8 +135,8 @@
 </div>
 
 <!-- ordering section -->
-<div class="container" >
-    <div class="row">
+<div class="container ordering" >
+    <div class="row ">
         <div class="col-md-6">
             <h2 style="text-align:center; padding-bottom: 30px; padding-top: 10px;">Order Here</h2>
             <p>Best palace with hot pizza</p>
@@ -187,7 +218,7 @@
                   </div><br>
 
                 <div class="button">
-                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white;" onsubmit="console.log(newOrder);">order</button>
+                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white;" var="newOrder;">Order</button>
                 </div><br>
             </form>
         </div>
@@ -201,7 +232,7 @@
                       <th>cost</th>
                     </tr>
                 </thead>
-                <tbody id="orders">
+                <tbody id="Orders">
 
                     <tr>
                       <td>name</td>
@@ -248,7 +279,7 @@
                 </div>
                    <!-- order summary and delivery options -->
                   <div class="text-end">
-                        <p class="Final-total cost" > <button id="cal" onclick="console.log(newOrder)">Total cost: Ksh</button> <span class="text-bold"></span></p>
+                        <p class="Final-total cost" > <button id="cal" onclick="myFunction()">Total cost: Ksh</button> <span class="text-bold"></span></p>
                     </div>
                     
             

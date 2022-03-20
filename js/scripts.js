@@ -30,6 +30,39 @@ function Toppings (toppings,cost) {
  order.prototype.newOrder 
  var sumtotal = 0
 
+ //  Pizza names
+let Pepperoni = new Name ("Pepperoni")
+let ChickenTikka = new Name("Chicken Tikka")
+let Gamberi = new Name("Gamberi")
+let PulledPork = new Name ("Pulled Pork")
+let Margharita = new Name("Margharita")
+let Marinara = new Name("Marinara")
+let SpicyVeggie = new Name("Spicy Veggie")
+let Mushroom = new Name("Mushroom")
+let BbqPork = new Name("Bbq Pork")
+let GrilledPork = new Name("Grilled Pork")
+let Hawaiian = new Name("Hawaiian")
+
+
+//pizza size
+let large = new Size("large", 900);
+let medium = new Size("medium",700);
+let small = new Size("small",500);
+
+
+// Pizza crusts
+let crispy = new Crust("crispy",250);
+let stuffed = new Crust("stuffed",200);
+let gluttenfree = new Crust("gluttenfree",180);
+
+// toppings
+let Mushrooms = new Toppings("Mushrooms",100);
+let Butternut = new Toppings("Butternut",50);
+let Cauliflower = new Toppings("Cauliflower",70);
+let Bacon = new Toppings("Bacon",80);
+let Tomatoes = new Toppings("Tomatoes",40);
+
+
  $(document).ready(function(){
     $(".delivery").hide()
     $("#checkout").click(function () {
@@ -45,12 +78,6 @@ function Toppings (toppings,cost) {
         
       });
 
-//  Pizza names
-//pizza size
-// Pizza crusts
-// toppings
-
-
 
 // User interface logic
 $(document).ready(function() {
@@ -63,15 +90,15 @@ $(document).ready(function() {
         var inputtedToppings = $("select#toppings").val(); 
         var inputtedQuantity = $("input#quantity").val();
         var inputtedTotal = $("select#total").val();
-        var toppingsPrice = toppings.length *70
-        var sizePrice = $('#size').find('option:selected').attr('price');
-        var crustPrice = $('#crust').find('option:selected').attr('price');
+        var toppingsCost= toppings.length *70
+        var sizeCost = $('#size').find('option:selected').attr('cost');
+        var crustCost = $('#crust').find('option:selected').attr('cost');
        
     
         var newOrder = new Order(
           inputtedName, inputtedSize, inputtedCrust, inputtedQuantity, inputtedToppings, inputtedTotal
         );
-        var sumTotal = Number(sizePrice) + Number(crustPrice) +Number(toppingsPrice)
+        var sumTotal = Number(sizeCost) + Number(crustCost) +Number(toppingsCost)
         sumtotal = sumTotal
     
         //output
@@ -85,6 +112,7 @@ $(document).ready(function() {
         "<td>" + inputtedTotal+"</td>"+
         
         "</tr>");
+        alert(newOrder)
     });
 });
         function locationvalidate () {
@@ -101,10 +129,10 @@ $(document).ready(function() {
             
               $("form#formcustomer").submit(function (event){
                 event.preventDefault();
-                  var clientName = $("#formcustomer #name").val();
-                  var clientPhone = $("#formcustomer #phone").val();
-                  var clientLocation = $("#formcustomer #location").val();
-                alert ("Hey,"+ clientName + " your order will be delivered to " + clientLocation + " you will be contacted on "+ clientPhone +".  Delivery charges are Ksh.50");
+                  var customerName = $("#formcustomer #name").val();
+                  var customerPhone = $("#formcustomer #phone").val();
+                  var customerLocation = $("#formcustomer #location").val();
+                alert ("Hey,"+ customerName  + " your order will be delivered to " +  customerLocation  + " you will be contacted on "+ customerPhone +".  Delivery charges are Ksh.50");
             });
 
        
