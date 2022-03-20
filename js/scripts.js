@@ -17,7 +17,7 @@ function quantity () {
     this.quantity = quantity 
 }    
 
-function Crust(crust,price) {
+function Crust(crust,cost) {
     this.crust = crust
     this.cost = cost 
 }        
@@ -83,7 +83,7 @@ $(document).ready(function() {
         
         "</tr>";
     
-        $("#orders").append(order);
+        $("#orders").append(Order);
 
         
 

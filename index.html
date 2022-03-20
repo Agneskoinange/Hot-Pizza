@@ -28,7 +28,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#aboutus">About us</a></li>
                         <li><a href="#products"> Our Products</a></li>
-                        <li><a href="#orders">Order</a></li>
+                        <li><a href="#order1">Send Order</a></li>
                         <li><a href="#contactus">Contact us</a></li>
                     </ul>
                 </nav>
@@ -41,7 +41,7 @@
                     <h1>HOT <br> PIZZA <span class="color-palace">PALACE!</span></h1>
                     <p>Serving hot Pizzas! Delivered while hot!</p>
                     <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" >
-                    <a href="#orders" class="btn1">Order Now!</a>
+                    <a href="#order1" class="btn1">Order Now!</a>
                     </button>
                 </div>
                 <div class="col-md-3 img2">
@@ -104,17 +104,17 @@
 </div>
 
 <!-- ordering section -->
-<div class="container" class="order" >
+<div class="container" >
     <div class="row">
         <div class="col-md-6">
             <h2>Order Here</h2>
             <p>Best palace with hot pizza</p>
             <form id="order-form">
-                    <div class="form-group" id="orders">
+                    <div class="form-group" id="order1">
 
                         <label for="">Select name <span class="text-danger">*</span></label>
                         <select name="pizza" id="name" class="form-control">
-                            <option value="" selected disabled>Select name </option>
+                            <option value="" >Select name </option>
                                 <option>Pepperoni</option>
                                 <option>Chicken Tikka</option>
                                 <option>Gamberi</option>
@@ -130,7 +130,7 @@
 
                         <label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>
                         <select name="size" id="size" class="form-control">
-                            <option value="" selected disabled>Select Size</option>
+                            <option value="" >Select Size</option>
                                 <option>Small</option>
                                 <option>Medium</option>
                                 <option>Large</option>
@@ -139,19 +139,23 @@
                 <div class="form-group">
                     <label for="new-crust">Select Pizza Crust <span class="text-danger">*</span></label>
                     <select name="crust" id="crust" class="form-control">
-                        <option value="" selected disabled>Select Crust</option>
+                        <option value="">Select Crust</option>
                         <option>Gluten Free</option>
                         <option>Stuffed</option>
                         <option>crispy</option>
                     </select>
-                </div><br>
-                <p><strong>Select Pizza Toppings</strong></p>
-                <div class="form-check">
-                    
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="toppings" id="toppings" >
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Mushrooms
-                    </label>
+                    <br>
+                    <div class="form-group">
+                        <label for="Quantity of pizza">Quantity odered</label>
+                        <input type="number" class="form-control-lg" id="quantity">
+                    </div>
+                    </div><br>
+                    <p><strong>Select Pizza Toppings</strong></p>
+                    <div class="form-check">  
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="toppings" id="toppings" >
+                      <label class="form-check-label" for="flexCheckDefault">
+                            Mushrooms
+                      </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
@@ -182,7 +186,7 @@
                   </div>
 
                 <div class="button">
-                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="myFunction()">Send Order<i class="btn-btn-primary"></i></button>
+                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="myFunction()">order</button>
                 </div>
             </form>
         </div>
@@ -195,7 +199,7 @@
                       <th>cost</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="orders">
 
                     <tr>
                       <td>name</td>
