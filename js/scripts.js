@@ -1,3 +1,4 @@
+// Business logic
 function Pizza(name,size, crust,toppings,quantity) {
     this.name =name
     this.size =size
@@ -6,10 +7,10 @@ function Pizza(name,size, crust,toppings,quantity) {
     this.quantity = quantity
 }
 
-function PizzaName (name) {
+function Name (name) {
     this.name = name
 }
-function PizzaSize (size,cost) {
+function Size (size,cost) {
     this.size = size
     this.cost = cost
 }
@@ -27,23 +28,23 @@ function Toppings (toppings,cost) {
  }       
 
 //  Pizza names
-let Pepperoni = new PizzaName ("Pepperoni")
-let ChickenTikka = new PizzaName("Chicken Tikka")
-let Gamberi = new PizzaName("Gamberi")
-let PulledPork = new PizzaName ("Pulled Pork")
-let Margharita = new PizzaName("Margharita")
-let Marinara = new PizzaName("Marinara")
-let SpicyVeggie = new PizzaName("Spicy Veggie")
-let Mushroom = new PizzaName("Mushroom")
-let BbqPork = new PizzaName("Bbq Pork")
-let GrilledPork = new PizzaName("Grilled Pork")
-let Hawaiian = new PizzaName("Hawaiian")
+let Pepperoni = new Name ("Pepperoni")
+let ChickenTikka = new Name("Chicken Tikka")
+let Gamberi = new Name("Gamberi")
+let PulledPork = new Name ("Pulled Pork")
+let Margharita = new Name("Margharita")
+let Marinara = new Name("Marinara")
+let SpicyVeggie = new Name("Spicy Veggie")
+let Mushroom = new Name("Mushroom")
+let BbqPork = new Name("Bbq Pork")
+let GrilledPork = new Name("Grilled Pork")
+let Hawaiian = new Name("Hawaiian")
 
 
 //pizza size
-let large = new PizzaSize("large", 900);
-let medium = new PizzaSize("medium",700);
-let small = new PizzaSize("small",500);
+let large = new Size("large", 900);
+let medium = new Size("medium",700);
+let small = new Size("small",500);
 
 
 // Pizza crusts
@@ -60,11 +61,11 @@ let Tomatoes = new Toppings("Tomatoes",40);
 
 
 
-
+// User interface logic
 $(document).ready(function() {
     $("form#order-form").submit(function(event) {
         event.preventDefault();
-        //getvalues from form
+        
         var inputtedName = $("select#name").val();
         var inputtedSize = $("select#size").val();
         var inputtedCrust = $("select#crust").val();
@@ -79,11 +80,14 @@ $(document).ready(function() {
         "<td>" + inputtedSize +"</td>"+
         "<td>" + inputtedCrust +"</td>"+
         "<td>" + inputtedToppings+"</td>"+
+        "<td>" + inputtedToppings+"</td>"+
+        "<td>" + inputtedToppings+"</td>"+
         "<td>" + inputtedQuantity +"</td>"+
         
         "</tr>";
     
-        $("#orders").append(Order);
+        $("ul#orders").append(order);
+        
 
         
 
