@@ -187,7 +187,7 @@
                   </div><br>
 
                 <div class="button">
-                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="myFunction()">order</button>
+                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white;" onsubmit="console.log(newOrder);">order</button>
                 </div><br>
             </form>
         </div>
@@ -241,9 +241,14 @@
                     </tr>
                 </tfoot>
             </table>
+                  <p id="Quantity"></p>
+                  <p id="totalbill"></p>
+                  <p id="deliverycost">Delivery will cost ksh.50</p>
+                  <p id="finalmessage"></p>
+                </div>
                    <!-- order summary and delivery options -->
                   <div class="text-end">
-                        <p class="Final-total cost" > <button id="cal" onclick="function()">Total cost: Ksh</button> <span class="text-bold"></span></p>
+                        <p class="Final-total cost" > <button id="cal" onclick="console.log(newOrder)">Total cost: Ksh</button> <span class="text-bold"></span></p>
                     </div>
                     
             
@@ -252,7 +257,7 @@
         <div class="delivery-button" style= "border: none; border-radius: 70px; color:white">
             <div class="delivery col-md-6">
                 <form onsubmit="locationvalidate ()" action="" id="formcustomer">
-                  <div class="formg-control" style="padding-top=10px">
+                  <div class="formg-control" style="padding-top:10px">
                     <input type="text" id="name" class="form-control mb-3" placeholder="Name">
                     <input type="number" id="phone" class="form-control mb-3" placeholder="Pnone Number">
                     <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery">
