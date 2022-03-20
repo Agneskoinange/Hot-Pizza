@@ -106,13 +106,12 @@ tfoot {color: red;}
 
 
 #contactus {
- padding-top: 10px;
-  background-color: rgb(248, 241, 241);
+ background-color: rgb(248, 241, 241);
   /* background-size:cover; */
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
-  background: position 0px;
+  
   
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
