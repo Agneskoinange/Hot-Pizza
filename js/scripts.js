@@ -1,118 +1,595 @@
-// Business logic
-function Pizza(name,size, crust,toppings,quantity) {
-    this.name =name
-    this.size =size
-    this.crust = crust
-    this.toppings = toppings
-    this.quantity = quantity
-}
+function Order(name, size, crust, quantity, toppings, total) {
+    this.name = name;
+    this.size = size;
+    this.crust = crust;
+    this.quantity = quantity;
+    this.toppings = toppings;
+    this.total = total;
+  }
+  Order.prototype.newOrder
+  var sumtotal = 0
 
-function Name (name) {
-    this.name = name
-}
-function Size (size,cost) {
-    this.size = size
-    this.cost = cost
-}
-function quantity () {
-    this.quantity = quantity 
-}    
 
-function Crust(crust,cost) {
-    this.crust = crust
-    this.cost = cost 
-}        
-function Toppings (toppings,cost) {
-    this.toppings = toppings
-    this.cost = cost
- }       
-
- order.prototype.newOrder 
- var sumtotal = 0
-
- $(document).ready(function(){
-    $(".delivery").hide()
-    $("#checkout").click(function () {
-    alert("Hello,this is your order and the total amount is ksh."+sumtotal)
-});
-  
-     
-    $(".delivery").show()   
-    });
-    $("#place-order").click(function () {
-      locationvalidate() 
-     
-        
-      });
-
-//  Pizza names
-//pizza size
-// Pizza crusts
-// toppings
+$(document).ready(function(){
+    $(function () {
+        $(".ordersummary").hide();
+        $(".deliver-check").hide();
 
 
 
-// User interface logic
-$(document).ready(function() {
-    $("form#order-form").submit(function(event) {
+    $("#btn").click(function(event){
         event.preventDefault();
-        
-        var inputtedName = $("select#name").val();
-        var inputtedSize = $("select#size").val();
-        var inputtedCrust = $("select#crust").val();
-        var inputtedToppings = $("select#toppings").val(); 
-        var inputtedQuantity = $("input#quantity").val();
-        var inputtedTotal = $("select#total").val();
-        var toppingsPrice = toppings.length *70
-        var sizePrice = $('#size').find('option:selected').attr('price');
-        var crustPrice = $('#crust').find('option:selected').attr('price');
+        let name = $("#name option:selected").val();
+        let size = $("#size option:selected").val();
+        let crust = $("#crust option:selected").val();
+        let quantity = $("#quantity").val();
+        let topping= $("#topping option:checked").val();
        
-    
-        var newOrder = new Order(
-          inputtedName, inputtedSize, inputtedCrust, inputtedQuantity, inputtedToppings, inputtedTotal
-        );
-        var sumTotal = Number(sizePrice) + Number(crustPrice) +Number(toppingsPrice)
-        sumtotal = sumTotal
-    
-        //output
-            console.log(newOrder);
-            $("tbody#ordermade").append("<tr>"+
-        "<td>" + inputtedName+"</td>"+
-        "<td>" + inputtedSize +"</td>"+
-        "<td>" + inputtedCrust +"</td>"+
-        "<td>" + inputtedToppings+"</td>"+
-        "<td>" + inputtedQuantity +"</td>"+
-        "<td>" + inputtedTotal+"</td>"+
-        
-        "</tr>");
-    });
-});
-        function locationvalidate () {
-        var name = document.getElementById("name").value;
-        var phone = document.getElementById("phone").value;
-        var location = document.getElementById("location").value;
-        if (name == "" || phone  == ""|| location  == ""){
-        alert("Please enter your name, phone number and location.");
-        return false;
-        }
-    }  
 
-      
+        let order = (inputtedName, inputtedSize, inputtedCrust, inputtedTopping, inputtedQuantity, inputtedTotal) => {
+            return {inputtedName, inputtedSize, inputtedCrust, inputtedTopping, inputtedQuantity, inputtedTotal};
+        };
+
+
+        let price,totalPrice;
+        switch (name){
+            case name = "Pepperoni":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Chicken Tikka":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Gamberi":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Pulled Pork":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Margharita":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Marinara":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Mushroom":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Spicy Veggie":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Bbq Pork":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Grilled Pork":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+                case name = "Hawaiian":
+                switch (size) {
+                    case size = "Large":
+                        price = 900;
+                        if (crust === "Crispy" ){
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity)+ 180;
+                        } 
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Medium":
+                        price = 700;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        }
+                        break;
+                    case size = "Small":
+                        price = 500;
+                        if (crust === "Crispy") {
+                            totalPrice = (price * quantity) + 250;
+                        } else if (crust === "Stuffed") {
+                            totalPrice = (price * quantity) + 200;
+                        } else if (crust === "Glutten free") {
+                            totalPrice = (price * quantity) + 180;
+                        }
+                        else{
+                            totalPrice === price
+                        } 
+                        break;       
+                        
+                }
+                break;
+
+
             
-              $("form#formcustomer").submit(function (event){
-                event.preventDefault();
-                  var clientName = $("#formcustomer #name").val();
-                  var clientPhone = $("#formcustomer #phone").val();
-                  var clientLocation = $("#formcustomer #location").val();
-                alert ("Hey,"+ clientName + " your order will be delivered to " + clientLocation + " you will be contacted on "+ clientPhone +".  Delivery charges are Ksh.50");
-            });
 
-       
+        }
 
-       function response() {
-        alert("Your order will be sent to your selected location")
-        alert("Click the checkout button to exit")
+
+    
+        switch (topping){
+            case topping = "Mushrooms":
+                totalPrice = totalPrice + 100;
+                break;
+            case topping = "Butternut":
+                totalPrice = totalPrice + 50;
+                break;
+            case topping = "Cauliflower":
+                totalPrice = totalPrice + 70;
+                break;
+            case topping = "Bacon":
+                totalPrice = totalPrice +80;
+                break;
+            case topping = "Tomatoes":
+                totalPrice = totalPrice + 40;
+                break;
+        }
+    
+
+        
+
+        let newOrder= order(name,size,crust,topping,quantity,totalPrice);
+
+        $(".ordersummary").slideToggle(2000)
+        $('.deliver-check').slideToggle();
+        $('#yourOrder').slideToggle();
+        $('.transport').show(1000);
+    
+        $("#yourOrder").text(" ");
+        $("#yourOrder").append( "Pizza name: " + newOrder.inputtedName + "<br>"
+         + "Size: " + newOrder.inputtedSize + "<br>"
+         + "Crust: " + newOrder.inputtedCrust + "<br>"
+         + "Topping: " + newOrder.inputtedTopping + "<br>"
+         + "Quantity: " + newOrder.inputtedQuantity + "<br>"
+         + "Total: " + newOrder.inputtedTotal)
+    });
+        $(".transport").click(function () {
+        $(".ordersummary").slideToggle();
+        $("#yourOrder").slideToggle();
+        $(".ordersummary").text("Please provide your location for deliveries.").Toggle();
+        // $(".transport").hide(1000);
+        $(".deliver-check").slideToggle();
+    });
+
+    
+
+    });
+
+});
+
+
+function customerValidate () {
+    var customerName = document.getElementById("customername").value;
+    var customerPhone = document.getElementById("customerphone").value;
+    var customerLocation = document.getElementById("customerlocation").value;
+    if (customerName == "" || customerPhone  == ""|| customerLocation  == ""){
+      alert("Please enter your name, phone number and location.");
+       return false;
+
     }
+    else{
+      alert ("Your order will be delivered to " + customerLocation + ".  Delivery charges are Ksh.100");
+          }
+    }
+  
 
     function exit() {
         alert("Thank you for visiting our website")
