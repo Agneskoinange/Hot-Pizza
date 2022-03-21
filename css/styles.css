@@ -82,6 +82,14 @@ float:left;
   margin-top: 50px;
  }
 
+ .empty-box {
+   float:inline-end;
+   color:red;
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+ }
+
 #resposive-table {
   
     width:50%;
@@ -109,6 +117,7 @@ tfoot {color: red;}
 }
 
 
+
 #contactus {
  background-color: rgb(135,124,131);
   /* background-size:cover; */
@@ -116,17 +125,23 @@ tfoot {color: red;}
   background-repeat: no-repeat;
   width: 100%;
   
-  
+}
+
+#feedback ::placeholder {
+  color:rgb(40, 45, 46)
+  ;
+
+}
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
   .column {
     flex: 50%;
   }
-}
+};
 
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (min-width:  600px) {
   .row {
     flex-direction:inherit;
   }
-}};
+};

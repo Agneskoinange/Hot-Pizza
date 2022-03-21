@@ -28,7 +28,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#aboutus">About us</a></li>
                         <li><a href="#products"> Our Products</a></li>
-                        <li><a href="#order1">Send Order</a></li>
+                        <li><a href="#ordersection">Order</a></li>
                         <li><a href="#contactus">Contact us</a></li>
                     </ul>
                 </nav>
@@ -41,7 +41,7 @@
                     <h1>HOT <br> PIZZA <span class="color-palace">PALACE!</span></h1>
                     <p>Serving hot Pizzas! Delivered while hot!</p>
                     <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" >
-                    <a href="#order1" class="btn1">Order Now!</a>
+                    <a href="#ordersection" class="btn1">Order Now!</a>
                     </button>
                 </div>
                 <div class="col-md-3 img2">
@@ -124,7 +124,7 @@
         </div>
 
         <div class="col-md-4">
-            <p>Roasted Tomato toppings</p>
+            <h5>A pizza with Tomato toppings</h5>
             <img src="./Images/Set_1.png" alt=" hot pizza" id="hotpizza" style="width:400px; height:400px; float: inline-end;">
             
         </div>
@@ -135,155 +135,148 @@
 </div>
 <!-- Ordering section -->
 <a name="checkout"> 
-    <div class="container">
-       <div class=" row order">
+    <div class="container ordering">
+       <div class="row order" id="ordersection">
          <div class="col-md-6">
-            <h1>Order Here!</h1>
-         <br>
-            <form action="">
+            <h2 style="text-align:center; padding-bottom: 30px; padding-top: 10px;">Order Here</h2>
+              <p>Best palace with hot pizza</p><br>
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Select name</label>
+                        <select class="form-control" id="name">
+                            <option selected value="0">Select name </option>
+                            <option value="Pepperoni">Pepperoni</option>
+                            <option value="Chicken Tikka">Chicken Tikka</option>
+                            <option value="Gamberi">Gamberi</option>
+                            <option value="Pulled Pork"> Pulled Pork</option>
+                            <option value="Margharita">Margharita</option>
+                            <option value="Marinara">Marinara</option>
+                            <option value="Mushroom">Mushroom</option>
+                            <option value="Spicy Veggie">Spicy Veggie</option>
+                            <option value="Bbq Pork">Bbq Pork</option>
+                            <option value="Grilled Pork">Grilled Pork</option>
+                            <option value="Hawaiian">Hawaiian</option>
+                        </select>
+                    </div><br>
+            
                 <div class="form-group">
-                    <label for="name">Select name</label>
-                    <select class="form-control" id="name">
-                        <option value="Pepperoni">Pepperoni</option>
-                        <option value="Chicken Tikka">Chicken Tikka</option>
-                        <option value="Gamberi">Gamberi</option>
-                        <option value="Pulled Pork"> Pulled Pork</option>
-                        <option value="Margharita">Margharita</option>
-                        <option value="Marinara">Marinara</option>
-                        <option value="Mushroom">Mushroom</option>
-                        <option value="Spicy Veggie">Spicy Veggie</option>
-                        <option value="Bbq Pork">Bbq Pork</option>
-                        <option value="Grilled Pork">Grilled Pork</option>
-                        <option value="Hawaiian">Hawaiian</option>
-                </select>
-            </div>
-            <br>
-             <div class="form-group">
-                <label for="size">Select Size</label>
-                <select class="form-control" id="size">
-                    <option value="Large">Large</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Small">Small</option>
-                </select>
-    
-             </div>
-             <br>
-             <div class="form-group">
-                <label for="crust">Select Crust:</label>
-                <select  class="form-control" id="crust">
-                    <option value="Crispy">Crispy</option>
-                    <option value="Stuffed">Stuffed</option>
-                    <option value="Glutten free">Glutten free</option>
-                </select>
-    
-            </div>
-            <br>
+                    <label for="size">Select Size</label>
+                    <select class="form-control" id="size">
+                        <option value="" >Select Size</option>
+                        <option value="Large">Large ksh. 900</option>
+                        <option value="Medium">Medium ksh. 700</option>
+                        <option value="Small">Small ksh. 500</option>
+                    </select>
+                </div><br>
+             
+                <div class="form-group">
+                    <label for="crust">Select Crust:</label>
+                    <select  class="form-control" id="crust">
+                        <option value="">Select Crust</option>
+                        <option value="Crispy">Crispy ksh. 250</option>
+                        <option value="Stuffed">Stuffed ksh. 200</option>
+                        <option value="Glutten free">Gluten free ksh. 180</option>
+                    </select>
+                </div><br>
 
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" min="1" required>
-    
-            </div>
-            <br>
-            <p><strong>Select Pizza Toppings</strong></p>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" min="1" required>
+                </div><br>
+            
+                    <p><strong>Select Pizza Toppings</strong></p>
                 <div class="form-check" id="topping">  
                     <input class="form-check-input" type="checkbox" value="Mushrooms" id="flexCheckDefault" name="toppings" id="top1" >
                     <label class="form-check-label" for="flexCheckDefault">
                             Mushrooms
                     </label>
-                  </div>
+                </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Butternut" id="flexCheckChecked" id="top2">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Butternut
-                </label>
-              </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Butternut" id="flexCheckChecked" id="top2">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Butternut
+                    </label>
+                </div>   
 
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Cauliflower" id="flexCheckChecked" id="top3">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Cauliflower
-                </label>
-              </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Cauliflower" id="flexCheckChecked" id="top3">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Cauliflower
+                    </label>
+                </div>   
 
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Bacon" id="flexCheckChecked" id="top4">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Bacon
-                </label>
-              </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bacon" id="flexCheckChecked" id="top4">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Bacon
+                    </label>
+                </div>
 
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Tomatoes" id="flexCheckChecked" id="top5">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Tomatoes
-                </label>
-              </div><br>
-            <br>
-        </div> 
-        <div class="col-md-6">
-            <br>
-            <a href="#order1">
-                <button id="btn">Order</button>
-            </a>      
-          </form>
-    
-
-
-         
-            <div class="summary">
-                <h1 class="ordersummary">This is what you have ordered:</h1>
-                <ol id="yourOrder" class="oder-sum">
-                </ol>
-        
-                <div class="mx-auto d-block" deliver-pick >
-                    <button class="transport"> Deliver Check</button>
-                    
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Tomatoes" id="flexCheckChecked" id="top5">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Tomatoes
+                    </label>
+                </div><br><br>
                 
-                
+                <a href="#order1">
+                    <button id="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white;"> Send Order</button>
+               </a>      
+                </form>
+          </div>
+
+          <div class="col-md-6">
+            <div class="empty-box text-center">
+                <img src="./Images/Pizzabox-removebg-preview (1).png" alt="Empty pizza box"> <br>
+                <p>Your Pizza box is ready!</p>
+            </div>
+                <div class="summary">
+                    <h1 class="ordersummary">This is what you have ordered:</h1>
+                    <ol id="yourOrder" class="oder-sum">
+                    </ol>
+            
+                    <div class="mx-auto d-block" >
+                        <button class="transport" data-bs-toggle="summary" data-bs-target="#deliveryMethod" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white; margin-left: 250px;">Delivery Check <i
+                            class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
         
-            </div>
-        
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="deliver-check">
-                <!-- <h4>Please provide your location for deliveries.</h4> -->
-                <br>
-                <form onsubmit = "customerValidate()" action="">
-                    <div class="form-group">
-                        <label for="name">Please enter you name:</label>
-                        <input id="customername" class="form-control" type="text">
+                <div class="container">
+                    <div class="deliver-check">
+                        <!-- <h4>Please provide your location for deliveries.</h4> -->
+                        <br>
+                        <form onsubmit = "customerValidate()" action="">
+                            <div class="form-group">
+                                <label for="name">Please enter you name:</label>
+                                <input id="customername" class="form-control" type="text">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="phone">Please enter your phone number:</label>
+                                <input id="customerphone" class="form-control" type="number">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="location">Please enter your location:</label>
+                                <input id="customerlocation" class="form-control" type="text">
+                            </div>
+                            <br>
+                            <button id="deliver" >Deliver to You</button>
+                        </form>
+                    </div>  
+                </div><br><br>
+                    <div>
+                        <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px; margin-left: 275px;" onclick="exit()">Checkout</button>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="phone">Please enter your phone number:</label>
-                        <input id="customerphone" class="form-control" type="number">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="location">Please enter your location:</label>
-                        <input id="customerlocation" class="form-control" type="text">
-                    </div>
-                    <br>
-                    <button id="deliver">Let's deliver</button>
-                </form>
             </div>
-        
+                
             
-            </div>
-            <br><br>
-
-
-         </div>
         </div>
+    </div><br><br>
 
-
-       
-
+        
 <div class=container-fluid id="contactus" style= padding-top:50px>
     <div class="row col-md-12">
       <h3 style="text-align:center; padding-bottom: 30px; padding-top: 0px;"><strong>Contact us</strong></h3>
@@ -308,7 +301,7 @@
             <p>We value your Pizza Intrests and feedback. Leave us a message:</p>
             <form id="feedback">
                 <div class="form-group textarea">
-                    <textarea type="text" name="message" id="message" class="form-control" rows="8" placeholder="Your message here..." required></textarea>
+                    <textarea type="text" name="message" style="background-color: transparent;" id="message" class="form-control" rows="8" placeholder="Your message here..." required></textarea>
                     <button type="submit" class="btn-btn-primary" style="background-color:rgb(248,147,45); border: none; border-radius: 20px; color:white" >Submit</button>
                 </div>
             </form>
