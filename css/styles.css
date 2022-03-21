@@ -24,7 +24,7 @@
     text-align: justify;
   }
     
-    li {
+    .nav-items li {
         border-bottom: 1px solid #555;
         display: inline;
      }
@@ -73,13 +73,25 @@ float:left;
 
 
 #products {
-  background-color: rgb(248, 241, 241);
-  align-items: inline ;
-  height: 100%;
-  width: 100%;
+  background-color: rgb(135,124,131);
 }
  /* order section */
+
+ .ordering {
+  background-color: rgb(248, 241, 241);
+  margin-top: 50px;
+ }
+
+ .empty-box {
+   float:inline-end;
+   color:red;
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+ }
+
 #resposive-table {
+  
     width:50%;
     height:100px;
      
@@ -105,24 +117,31 @@ tfoot {color: red;}
 }
 
 
+
 #contactus {
- background-color: rgb(248, 241, 241);
+ background-color: rgb(135,124,131);
   /* background-size:cover; */
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
   
-  
+}
+
+#feedback ::placeholder {
+  color:rgb(40, 45, 46)
+  ;
+
+}
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
   .column {
     flex: 50%;
   }
-}
+};
 
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (min-width:  600px) {
   .row {
     flex-direction:inherit;
   }
-}};
+};

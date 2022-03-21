@@ -28,7 +28,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#aboutus">About us</a></li>
                         <li><a href="#products"> Our Products</a></li>
-                        <li><a href="#order1">Send Order</a></li>
+                        <li><a href="#ordersection">Order</a></li>
                         <li><a href="#contactus">Contact us</a></li>
                     </ul>
                 </nav>
@@ -41,7 +41,7 @@
                     <h1>HOT <br> PIZZA <span class="color-palace">PALACE!</span></h1>
                     <p>Serving hot Pizzas! Delivered while hot!</p>
                     <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" >
-                    <a href="#order1" class="btn1">Order Now!</a>
+                    <a href="#ordersection" class="btn1">Order Now!</a>
                     </button>
                 </div>
                 <div class="col-md-3 img2">
@@ -63,16 +63,16 @@
         <div class="row">
             <div class="col-md-12">
 
-                <img src="./Images/img9.jpg" alt=" hot pizza" id="hotpizza">
-                <h1 style="text-align:center">About us</h1>
-                <p>Hot Pizza Palace is a pizza point located in Nairobi along Thika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satisfy most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your liking.All we are saying is that "how you like it is how you will get it". Simply! It is all about you</p>
+                <img src="./Images/img9.jpg" alt=" hot pizza" id="hotpizza" style="margin-top: 35px;">
+                <h1 style="text-align:center;">About us</h1>
+                <p style="text-align:center; padding-bottom: 50px;"> Hot Pizza Palace is a pizza point located in Nairobi along Thika road.We love to see our customers happy and satisified at all times with a hot quality product of pizza.Our menu is based on fresh daily souces thay we prepare hpourly and marinated, cooked or locally produced supplies. Our menu size is created in an opinion of a decent size that can satisfy most.Therefore  we supply various pizza sizes and pizza base souces custmoised to your liking.All we are saying is that "how you like it is how you will get it". Simply! It is all about you</p>
             </div>
         </div>
 
     </div>
 </div>
 <!-- Our products -->
-<div class="container" class="Products" id="products">
+<div class="container-fluid" class="Products" id="products">
     <div class="row">
         <div class="col-md-12">
             <h2 style="text-align:center; padding-bottom: 30px;">Our Products</h2>
@@ -81,20 +81,51 @@
 
     <div class="row">
         <div class="col-md-4">
-            <p>Butternut toppings</p>
-            <img src="./Images/pexels-gilly-topicha-10779657.jpg" alt=" hot pizza" id="hotpizza">
-            
+            <h4>Pizza names</h4>
+              <ul>
+                <li>Pepperoni</li>
+                <li>Chicken Tikka</li>
+                <li>Pulled Pork</li>
+                <li>Margharita</li>
+                <li>Marinara</li>
+                <li>Mushroom</li>
+                <li>Spicy Veggie</li>
+                <li>Bbq Pork</li>
+                <li>Grilled Pork</li> 
+                <li>Hawaiian</li>
+              </ul>
+
+            <h4>Pizza Sizes</h4>
+              <ul>
+                <li>Large ksh. 900</li>
+                <li>Medium ksh. 700</li>
+                <li>Small ksh. 500</li>
+              </ul>
+
         </div>
 
         <div class="col-md-4">
-            <p>Bacon Toppings</p>
-            <img src="./Images/vitalii-chernopyskyi-Oxb84ENcFfU-unsplash.jpg" alt=" hot pizza" id="hotpizza">
-            
+            <h4>Pizza Crust</h4>
+            <ul>
+                <li>Crispy ksh. 250</li>
+                <li>Stuffed ksh. 200</li>
+                <li>Gluten free ksh. 180</li>
+            </ul>
+
+            <h4>Pizza Toppings</h4>
+            <ul>
+                <li>Mushrooms ksh.  100</li>
+                <li>Butternut ksh. 50</li>
+                <li>Cauliflower ksh. 70</li>
+                <li>Bacon ksh. 80</li>
+                <li>Tomatoes ksh. 40</li>
+            </ul>
+
         </div>
 
         <div class="col-md-4">
-            <p>Roasted Tomato toppings</p>
-            <img src="./Images/pexels-valeria-boltneva-9957549.jpg" alt=" hot pizza" id="hotpizza">
+            <h5>A pizza with Tomato toppings</h5>
+            <img src="./Images/Set_1.png" alt=" hot pizza" id="hotpizza" style="width:400px; height:400px; float: inline-end;">
             
         </div>
 
@@ -102,174 +133,150 @@
 
         
 </div>
-
-<!-- ordering section -->
-<div class="container" >
-    <div class="row">
-        <div class="col-md-6">
+<!-- Ordering section -->
+<a name="checkout"> 
+    <div class="container ordering">
+       <div class="row order" id="ordersection">
+         <div class="col-md-6">
             <h2 style="text-align:center; padding-bottom: 30px; padding-top: 10px;">Order Here</h2>
-            <p>Best palace with hot pizza</p>
-            <form id="order-form">
-                    <div class="form-group" id="order1">
-
-                        <label for="">Select name <span class="text-danger">*</span></label>
-                        <select name="pizza" id="name" class="form-control">
-                            <option selected value="0">Select name </option>
-                                <option value="Pepperoni">Pepperoni</option>
-                                <option value="Chicken Tikka">Chicken Tikka</option>
-                                <option value="Gamberi">Gamberi</option>
-                                <option value="Pulled Pork"> Pulled Pork</option>
-                                <option value="Margharita">Margharita</option>
-                                <option value="Marinara">Marinara</option>
-                                <option value="Mushroom">Mushroom</option>
-                                <option value="Spicy Veggie">Spicy Veggie</option>
-                                <option value="Bbq Pork">Bbq Pork</option>
-                                <option value="Grilled Pork">Grilled Pork</option>
-                                <option value="Hawaiian">Hawaiian</option>
-                        </select>
-
-                        <label for="new-size">Select Pizza Size <span class="text-danger">*</span></label>
-                        <select name="size" id="size" class="form-control">
-                            <option value="" >Select Size</option>
-                            <option value="large" price="900">Large ksh. 900</option>
-                            <option value="medium" price="700">Medium ksh. 700</option>
-                            <option value="small" price="500">Small ksh. 500</option>
-                        </select>
-                </div>
-                <div class="form-group">
-                    <label for="new-crust">Select Pizza Crust <span class="text-danger">*</span></label>
-                    <select name="crust" id="crust" class="form-control">
-                        <option value="">Select Crust</option>
-                            <option value="Crispy" price="250">Crispy ksh. 250</option>
-                            <option value="Stuffed" price="200">Stuffed ksh. 200</option>
-                            <option value="Gluten free" price="180">Gluten free ksh. 180</option>
-            
-                    </select>
-                    <br>
+              <p>Best palace with hot pizza</p><br>
+                <form action="">
                     <div class="form-group">
-                        <label for="Quantity of pizza">Quantity odered</label>
-                        <input type="number" class="form-control-lg" id="quantity">
-                    </div>
+                        <label for="name">Select name</label>
+                        <select class="form-control" id="name">
+                            <option selected value="0">Select name </option>
+                            <option value="Pepperoni">Pepperoni</option>
+                            <option value="Chicken Tikka">Chicken Tikka</option>
+                            <option value="Gamberi">Gamberi</option>
+                            <option value="Pulled Pork"> Pulled Pork</option>
+                            <option value="Margharita">Margharita</option>
+                            <option value="Marinara">Marinara</option>
+                            <option value="Mushroom">Mushroom</option>
+                            <option value="Spicy Veggie">Spicy Veggie</option>
+                            <option value="Bbq Pork">Bbq Pork</option>
+                            <option value="Grilled Pork">Grilled Pork</option>
+                            <option value="Hawaiian">Hawaiian</option>
+                        </select>
                     </div><br>
+            
+                <div class="form-group">
+                    <label for="size">Select Size</label>
+                    <select class="form-control" id="size">
+                        <option value="" >Select Size</option>
+                        <option value="Large">Large ksh. 900</option>
+                        <option value="Medium">Medium ksh. 700</option>
+                        <option value="Small">Small ksh. 500</option>
+                    </select>
+                </div><br>
+             
+                <div class="form-group">
+                    <label for="crust">Select Crust:</label>
+                    <select  class="form-control" id="crust">
+                        <option value="">Select Crust</option>
+                        <option value="Crispy">Crispy ksh. 250</option>
+                        <option value="Stuffed">Stuffed ksh. 200</option>
+                        <option value="Glutten free">Gluten free ksh. 180</option>
+                    </select>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" min="1" required>
+                </div><br>
+            
                     <p><strong>Select Pizza Toppings</strong></p>
-                    <div class="form-check">  
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="toppings" id="toppings" >
-                      <label class="form-check-label" for="flexCheckDefault">
+                <div class="form-check" id="topping">  
+                    <input class="form-check-input" type="checkbox" value="Mushrooms" id="flexCheckDefault" name="toppings" id="top1" >
+                    <label class="form-check-label" for="flexCheckDefault">
                             Mushrooms
-                      </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Butternut" id="flexCheckChecked" id="top2">
                     <label class="form-check-label" for="flexCheckDefault">
                         Butternut
                     </label>
-                  </div>
+                </div>   
 
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Cauliflower" id="flexCheckChecked" id="top3">
                     <label class="form-check-label" for="flexCheckDefault">
                         Cauliflower
                     </label>
-                  </div>
+                </div>   
 
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bacon" id="flexCheckChecked" id="top4">
                     <label class="form-check-label" for="flexCheckDefault">
                         Bacon
                     </label>
-                  </div>
+                </div>
 
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Tomatoes" id="flexCheckChecked" id="top5">
                     <label class="form-check-label" for="flexCheckDefault">
                         Tomatoes
                     </label>
-                  </div><br>
+                </div><br><br>
+                
+                <a href="#order1">
+                    <button id="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white;"> Send Order</button>
+               </a>      
+                </form>
+          </div>
 
-                <div class="button">
-                    <button class="btn" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="myFunction()">order</button>
-                </div><br>
-            </form>
-        </div>
-
-        <div class="col-md-6" id="resposive-table">
-            <h2 style="text-align:center; padding-bottom: 30px; padding-top: 10px;">Your Order</h2>
-            <table class="table table-responsive order-table">
-                <thead>
-                    <tr>
-                      <th>Pizza</th>
-                      <th>cost</th>
-                    </tr>
-                </thead>
-                <tbody id="orders">
-
-                    <tr>
-                      <td>name</td>
-                      <td>cost</td>
-                    </tr>
-                    <tr>
-                      <td>Size</td>
-                      <td>cost</td>
-                    </tr>
-      
-                    <tr>
-                      <td>Crust</td>
-                      <td>cost</td>
-                    </tr>
-                    <tr>
-                      <td>Toppings</td>
-                      <td>cost</td>
-                    </tr>
-                    <tr>
-                      <td>Quantity</td>
-                      <td>cost</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-
-                      <td class="cost">Total cost</td>
-                      <td>cost</td>
-      
-                    </tr>
-
-                    <tr>
-                      <td colspan="6" class="empty-box text-center">
-                          <img src="./Images/Pizzabox.jpeg" alt="Empty pizza box"> <br>
-                          <p>Your shopping box is empty!</p>
-                      </td>
-                    </tr>
-                </tfoot>
-            </table>
-                   <!-- order summary and delivery options -->
-                  <div class="text-end">
-                        <p class="Final-total cost" > <button id="cal" onclick="function()">Total cost: Ksh</button> <span class="text-bold"></span></p>
-                    </div>
-                    
+          <div class="col-md-6">
+            <div class="empty-box text-center">
+                <img src="./Images/Pizzabox-removebg-preview (1).png" alt="Empty pizza box"> <br>
+                <p>Your Pizza box is ready!</p>
+            </div>
+                <div class="summary">
+                    <h1 class="ordersummary">This is what you have ordered:</h1>
+                    <ol id="yourOrder" class="oder-sum">
+                    </ol>
             
-        </div>   
-        
-        <div class="delivery-button" style= "border: none; border-radius: 70px; color:white">
-            <div class="delivery col-md-6">
-                <form onsubmit="locationvalidate ()" action="" id="formcustomer">
-                  <div class="formg-control" style="padding-top=10px">
-                    <input type="text" id="name" class="form-control mb-3" placeholder="Name">
-                    <input type="number" id="phone" class="form-control mb-3" placeholder="Pnone Number">
-                    <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery">
-                    <button class="btn" data-bs-toggle="summary" data-bs-target="#deliveryMethod" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" onclick="response ()">Delivery Check <i
-                            class="fa fa-arrow-right" ></i></button>
-                  </div>
-                </form><br><br>
-                <div>
-                    <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px" onclick="exit()">Checkout</button>
+                    <div class="mx-auto d-block" >
+                        <button class="transport" data-bs-toggle="summary" data-bs-target="#deliveryMethod" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white; margin-left: 250px;">Delivery Check <i
+                            class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
-            </div> 
-      </div>    
+        
+                <div class="container">
+                    <div class="deliver-check">
+                        <!-- <h4>Please provide your location for deliveries.</h4> -->
+                        <br>
+                        <form onsubmit = "customerValidate()" action="">
+                            <div class="form-group">
+                                <label for="name">Please enter you name:</label>
+                                <input id="customername" class="form-control" type="text">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="phone">Please enter your phone number:</label>
+                                <input id="customerphone" class="form-control" type="number">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="location">Please enter your location:</label>
+                                <input id="customerlocation" class="form-control" type="text">
+                            </div>
+                            <br>
+                            <button id="deliver" >Deliver to You</button>
+                        </form>
+                    </div>  
+                </div><br><br>
+                    <div>
+                        <button style="background-color:rgb(248,147,45); border: none; border-radius: 70px; margin-left: 275px;" onclick="exit()">Checkout</button>
+                    </div>
+            </div>
+                
+            
+        </div>
+    </div><br><br>
 
-    </div>
-
-</div><br><br>
-
+        
 <div class=container-fluid id="contactus" style= padding-top:50px>
     <div class="row col-md-12">
       <h3 style="text-align:center; padding-bottom: 30px; padding-top: 0px;"><strong>Contact us</strong></h3>
@@ -294,8 +301,8 @@
             <p>We value your Pizza Intrests and feedback. Leave us a message:</p>
             <form id="feedback">
                 <div class="form-group textarea">
-                    <textarea type="text" name="message" id="message" class="form-control" rows="8" placeholder="Your message here..." required></textarea>
-                    <button type="submit" class="btn-btn-primary" style="background-color:rgb(248,147,45); border: none; border-radius: 70px; color:white" >Submit</button>
+                    <textarea type="text" name="message" style="background-color: transparent;" id="message" class="form-control" rows="8" placeholder="Your message here..." required></textarea>
+                    <button type="submit" class="btn-btn-primary" style="background-color:rgb(248,147,45); border: none; border-radius: 20px; color:white" >Submit</button>
                 </div>
             </form>
         </div>
